@@ -35,7 +35,7 @@ const Services = () => {
           <WhatWeDo>WHAT WE DO</WhatWeDo>
           <ServiceHeadingDiv>
             <ServiceHeading>Services We Offer</ServiceHeading>
-            <Link href='#contact-us'>
+            <Link href="#contact-us">
              <ContactButton>Contact Us</ContactButton>
             </Link>
           </ServiceHeadingDiv>
@@ -59,7 +59,7 @@ const Services = () => {
                 AI Workflows
               </ServiceTitle>
               <ServiceDetails className="service-details">
-                Expand your organization's capabilities by integrating AI directly into your workflows. We assist with AI for marketing automation, sales process optimization, code generation, and data analysis.
+                Expand your organization&apos;s capabilities by integrating AI directly into your workflows. We assist with AI for marketing automation, sales process optimization, code generation, and data analysis.
               </ServiceDetails>
             </Service>
 
@@ -75,7 +75,7 @@ const Services = () => {
                 src="/images/website development.svg">
               </ServiceImage>
               <ServiceTitle>
-                Discovery & Ideation
+                Discovery &amp; Ideation
               </ServiceTitle>
               <ServiceDetails className="service-details">
                 We kick off with a collaborative workshop to capture your vision, define user personas, map workflows, and craft a crisp problem statement. You walk away with a high-level journey map and the Section C narrative you need for your grant.
@@ -94,10 +94,10 @@ const Services = () => {
                 src="/images/app development.svg">
               </ServiceImage>
               <ServiceTitle>
-                Prototype & Feasibility
+                Prototype &amp; Feasibility
               </ServiceTitle>
               <ServiceDetails className="service-details">
-                Next, we validate your idea with a lightweight clickable prototype and a "drop-in" feasibility memo. We audit your data, compare AI-stack options (Vertex AI, open-source embeddings), and produce an architecture diagram plus budget & timeline estimates—perfect for reviewers.
+                Next, we validate your idea with a lightweight clickable prototype and a &quot;drop-in&quot; feasibility memo. We audit your data, compare AI-stack options (Vertex AI, open-source embeddings), and produce an architecture diagram plus budget &amp; timeline estimates—perfect for reviewers.
               </ServiceDetails>
             </Service>
 
@@ -132,10 +132,10 @@ const Services = () => {
                 src="/images/digital marketing.svg">
               </ServiceImage>
               <ServiceTitle>
-                Scale & Grow
+                Scale &amp; Grow
               </ServiceTitle>
               <ServiceDetails className="service-details">
-                Finally, we turn your pilot into a polished product. We run feature sprints based on user feedback, optimize performance and security (FERPA/NIH/NSF compliance), and set up grant-reporting exports. Ongoing support, health checks, and quarterly roadmap updates ensure you're ready to expand to new cohorts and funders.
+                Finally, we turn your pilot into a polished product. We run feature sprints based on user feedback, optimize performance and security (FERPA/NIH/NSF compliance), and set up grant-reporting exports. Ongoing support, health checks, and quarterly roadmap updates ensure you&apos;re ready to expand to new cohorts and funders.
               </ServiceDetails>
             </Service>
 
