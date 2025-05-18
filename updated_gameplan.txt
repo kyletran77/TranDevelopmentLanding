@@ -1,0 +1,243 @@
+## TranDevelopmentLanding - New Development Roadmap
+
+This document outlines NEW and PENDING tasks for the Next.js template, focusing on content updates, new features, and Strapi CMS integration.
+
+**Tran Development Summary (for reference - unchanged):**
+Tran Development is a boutique software agency founded by Kyle Tran, specializing in end-to-end AI and data solutions that transform academic research into scalable products. With deep expertise in EdTech, AI-driven analytics, and enterprise integrations, Tran Development guides clients through a full-cycle development process—Discovery & Ideation, Prototype & Feasibility, MVP Development, and Scale & Grow. Key clients include UC Irvine research labs and educational platforms, where Tran Development has delivered measurable improvements in student engagement, operational efficiency, and data-driven insights. Our mission is to empower organizations—academic, nonprofit, or enterprise—to unlock the value of their data and AI initiatives with compliant, robust, and user-centric software.
+
+Recently, we've expanded our offering to help organizations integrate AI directly into their workflows, leveraging AI for product development, marketing automation, sales processes, and code optimization. This end-to-end AI consultancy sets us apart from traditional product development firms, ensuring clients not only build AI products but also adopt AI-driven practices that enhance every facet of their business.
+
+---
+
+**Brand Assets & Colors: [DONE]**
+
+*   **Main Logo File:** `public/images/TranDevPRKit/full_tdev_logo.svg` **[DONE - Integrated]**
+*   **Favicon File:** `public/images/TranDevPRKit/color_tdev_logo.svg` **[DONE - Integrated]**
+*   **Primary Color Palette (extracted from SVGs):** **[DONE - Applied to Theme.js]**
+    *   Vibrant Mint Green: `#00ffb0`
+    *   Bright Sky Blue: `#48d0ff`
+    *   Medium Purple-Blue: `#5f5fc9`
+    *   Dark Indigo: `#272782`
+    *   Deep Violet: `#4225a3`
+    *   Light Lavender/Pinkish-Purple: `#c696d2`
+    *   Dark Blue Text Color: `#02022b` (consider for body text or dark themes)
+*   **Considerations for Theming:**
+    *   Use the vibrant greens/blues for primary actions, highlights, and accents.
+    *   The purples can be used for secondary elements or to create depth.
+    *   The dark indigo and deep violet can serve as base colors or for text.
+    *   Ensure sufficient contrast for accessibility, especially with text over colored backgrounds.
+
+---
+
+**I. Global Site Elements & Settings Updates**
+
+1.  **Navigation Bar (`components/Navbar/`) [Partially Done]**
+    *   **Action:**
+        *   Add "Blog" and "Tools" links to navigation text & URLs.
+        *   Integrate Calendly Link: `https://calendly.com/trandev/30min` (Consider for "Schedule a Call" CTA in Nav or prominent button).
+    *   **Strapi Consideration:** Update link management in Global Settings. Add Calendly link field.
+
+2.  **Footer (`components/Footer/`) [Partially Done - Needs Update]**
+    *   **Action: Update Contact Information & Social Links:**
+        *   **LinkedIn:** `https://www.linkedin.com/company/tran-development`
+        *   **Email:** `kyletran@trandev.net`
+        *   **Phone:** `(408)547-7240`
+        *   Add links for Privacy Policy / Terms of Service (if available).
+    *   **Strapi Consideration:** Update fields in Global Settings for social links and contact info.
+
+3.  **Favicon & Site Metadata [DONE - Updated in `pages/index.js`]**
+    *   **Information Needed:**
+        *   Favicon image: Use `public/images/TranDevPRKit/color_tdev_logo.svg` **[DONE]**
+        *   Site Title: Tran Development | AI & Data Solutions for Scalable Products **[DONE]**
+        *   Site Description (for SEO): Tran Development specializes in end-to-end AI and data solutions, transforming academic research and business processes into scalable products. Expertise in EdTech, AI analytics, and enterprise AI integration. **[DONE]**
+    *   **Strapi Consideration:** Fields in Global Settings for site title and description. Favicon is usually placed in `public/` but its path could be stored in settings if needed by a component.
+
+---
+
+**II. Homepage Content Updates (`pages/index.js` & `container/HomePage/`)**
+
+1.  **Hero Section (`components/HeroSection/`) [Needs Update]**
+    *   **Action:**
+        *   Update Primary Call-to-Action (CTA) Button Text to link to Calendly (e.g., "Schedule a Free Consultation").
+        *   Update Primary CTA Button Link: `https://calendly.com/trandev/30min`.
+    *   **Strapi Consideration:** Update CTA fields in Homepage Single Type.
+
+2.  **Services Overview (If present on Homepage - links to `components/Services/`)**
+    *   **Information Needed:** (Content as per previous plan)
+    *   **Strapi Consideration:** Relation to `Service` Collection Type.
+
+3.  **Features Overview (`components/Features/`)**
+    *   **Information Needed:** (Content as per previous plan)
+    *   **Strapi Consideration:** Repeatable component for features within Homepage, or a relation to a `Feature` Collection Type.
+
+4.  **About Us Snippet (If present on Homepage - links to `components/AboutUs/`) [DONE - Content Updated in `components/AboutUs/index.jsx`]**
+    *   **Information Needed:** (Content as per previous plan)
+    *   **Strapi Consideration:** Text fields on Homepage Single Type.
+
+5.  **Our Works/Portfolio Preview (`components/OurWorks/`) [NEEDS UPDATE]**
+    *   **Action: Integrate Case Studies Preview:**
+        *   Fetch and display a preview of 2-4 projects based on uploaded case studies.
+        *   Ensure links to individual case study pages or main "Portfolio/Case Studies" page.
+    *   **Strapi Consideration:** Relation to `CaseStudy` Collection Type, allowing selection of featured case studies.
+
+6.  **Testimonials (`components/Testimonials/` or `components/Testimonial/`)**
+    *   **Information Needed:** (Content as per previous plan)
+    *   **Strapi Consideration:** Relation to `Testimonial` Collection Type.
+
+7.  **Trusted Clients / Partners (`components/TrustedClients/`) [NEEDS UPDATE]**
+    *   **Action: Update Partner Logos:**
+        *   Replace existing/placeholder logos with new partner company logos.
+    *   **Strapi Consideration:** Update `Client` Collection Type (name, logo, URL) and relations on the Homepage.
+
+8.  **Values (`components/Values/`)**
+    *   **Information Needed:** (Content as per previous plan)
+    *   **Strapi Consideration:** A `Value` Collection Type or a repeatable component on the Homepage/About Us page.
+
+9.  **Call To Action (CTA) Section (Floating Button & Dedicated Section) [Needs Update]**
+    *   **Action:**
+        *   Change floating button to link to Calendly: `https://calendly.com/trandev/30min`.
+        *   Update dedicated CTA section button to also link to Calendly with appropriate text (e.g., "Schedule a Discovery Call").
+    *   **Strapi Consideration:** Update link fields on Homepage Single Type.
+
+---
+
+**III. Individual Page Updates & New Pages**
+
+1.  **About Us Page (`pages/about.js`) [NEEDS UPDATE]**
+    *   **Action: Add Team Information:**
+        *   Integrate team member information: Pictures of the team, names, titles, bios.
+    *   **Strapi Consideration:** Populate/Update `TeamMember` repeatable component (name, title, bio, image) within "About Page" Single Type.
+
+2.  **Services Page (`pages/services.js`, content from `components/Services/`)**
+    *   **Information Needed:** (Content as per previous plan)
+    *   **Strapi Consideration:** A `Service` Collection Type.
+
+3.  **Our Works / Portfolio / Case Studies Page (`pages/works.js` or similar) [NEEDS CREATION/UPDATE]**
+    *   **Action: Create/Populate Case Studies Section:**
+        *   Design and build page to list all Case Studies.
+        *   For each case study, include: Title, Client, Industry, Challenge, Solution, Technologies, Outcomes, Images/Mockups, Testimonial.
+    *   **Strapi Consideration:** Create and populate a `CaseStudy` Collection Type. This page will list all entries.
+
+4.  **Contact Us Page (`pages/contact.js`) [NEEDS MAJOR UPDATE]**
+    *   **Action:**
+        *   **Implement Engaging Lead Magnet Form:**
+            *   Design and develop an interactive AI-powered tool (e.g., "AI Project Estimator," "AI Readiness Quiz") to replace/enhance the standard contact form.
+            *   Ensure form submissions are sent to `kyletran@trandev.net` AND recorded in a database/CRM (e.g., Hubspot, Airtable, Google Sheets via Zapier, or custom backend).
+        *   **Update Displayed Contact Information:**
+            *   Email: `kyletran@trandev.net`
+            *   Phone: `(408)547-7240`
+            *   LinkedIn: `https://www.linkedin.com/company/tran-development` (as a link)
+            *   Calendly: `https://calendly.com/trandev/30min` (as "Schedule a Meeting" link)
+    *   **Strapi Consideration:** Update "Contact Page" Single Type for static text. Lead gen form and data recording will require separate integration planning.
+
+5.  **FAQ Page (`pages/faq.js` or similar, content from `components/FAQ/`)**
+    *   **Information Needed:** (Content as per previous plan)
+    *   **Strapi Consideration:** An `FAQItem` Collection Type.
+
+6.  **NEW: Blog Page (`pages/blog.js`) & Posts (`pages/blog/[slug].js`) [NEEDS CREATION]**
+    *   **Action: Develop Blog Functionality:**
+        *   Create page templates for blog listing and individual posts.
+        *   Implement functionality for displaying posts, categories/tags.
+    *   **Strapi Consideration:** Create `BlogPost` Collection Type (title, slug, content, author, date, image, categories, tags). Fetch content from Strapi.
+
+7.  **NEW: Tools Directory Page (`pages/tools.js` or similar) [NEEDS CREATION]**
+    *   **Action: Develop Tools Directory:**
+        *   Create page template to list tools.
+        *   Display tool name, logo, description, link, category.
+    *   **Strapi Consideration:** Create `Tool` Collection Type (name, logo, description, link, category). Fetch content from Strapi.
+
+---
+
+**IV. Data Files (`data/`) [Needs Update]**
+
+*   **Action:** Update `data/menuLinks.js` to include Blog and Tools links. Review other files for removal if their content is now managed by Strapi.
+*   **Goal:** Prioritize fetching data from Strapi over static files.
+
+---
+
+**V. Images (`public/images/`) [Needs Update & Additions]**
+
+*   **Action:**
+    *   `CLIENTS/`: Update with new partner company logos (if managed statically, otherwise via Strapi).
+    *   `MOCKUPS/`, `MOCKUPS1/`: Review and replace generic images with project-specific or more relevant ones.
+    *   **NEW:** Add a `TEAM/` directory for team member photos (if managed statically).
+    *   **NEW:** Add a `CASE_STUDIES/` directory for images related to case studies (if managed statically).
+*   **Strapi Consideration:** Most new images (team photos, case study images, client logos for dynamic sections) should be uploaded to Strapi and managed via its media library for easier updates.
+
+---
+
+**VI. Branding and Styling (CSS / Theme Files) [DONE - Initial Pass]**
+
+*   **Action:** (Content as per previous plan - ensure consistency with new sections)
+*   **Goal:** Visually align the template with Tran Development's brand identity.
+
+---
+
+**VII. General Text & Labels [Needs Review]**
+
+*   **Action:** Review all new/updated sections and components for hardcoded text. Ensure consistent and professional wording.
+*   **Strapi Consideration:** Store configurable text in Global Settings or relevant Collection Types in Strapi where appropriate.
+
+---
+
+**VIII. Lead Generation & Data Management [NEW FOCUS AREA - NEEDS IMPLEMENTATION]**
+
+1.  **Engaging Lead Forms:**
+    *   **Action:** Design and implement the AI-powered lead magnet on the Contact Us page.
+    *   **Tools/Tech:** Custom backend logic, integration with services like Typeform/Jotform, or a mini-app with Next.js API routes.
+2.  **Data Recording:**
+    *   **Action:** Implement robust data capture for all form submissions.
+    *   **Solutions:** Email notifications AND integration with a CRM (e.g., HubSpot) or database (e.g., Airtable, Google Sheets via Zapier/Make).
+
+---
+
+**Roadmap / Process Outline (Focus on New & Pending):**
+
+1.  **Content Gathering & Asset Preparation: [ONGOING]**
+    *   Collect new partner logos.
+    *   Take/collect team photos.
+    *   Write and gather assets (text, images) for Case Studies.
+    *   Develop content for initial Blog posts.
+    *   Compile list and details (names, logos, links, descriptions) for Tools Directory.
+    *   Finalize text for all new/updated website sections.
+    *   Optimize all new images.
+
+2.  **Strapi Setup & Content Population: [TODO]**
+    *   Define/Update Collection Types and Single Types in Strapi for:
+        *   Global Settings (ensure fields for Calendly, updated contact info, LinkedIn).
+        *   Team Members (with image field).
+        *   **NEW:** Case Studies (detailed fields: title, client, industry, challenge, solution, tech, outcomes, images, testimonial link).
+        *   **NEW:** Blog Posts (rich text editor for content, author, date, image, categories, tags).
+        *   **NEW:** Tools (name, logo, description, link, category).
+        *   Update existing types (Clients, Services, etc.) as needed for new fields or relations.
+    *   Populate Strapi with all newly gathered content and assets.
+
+3.  **Next.js Integration & Development (Iterative Process): [TODO]**
+    *   **Update Existing Sections (with new data/features):**
+        *   Footer: Integrate updated contact info and LinkedIn from Strapi.
+        *   Navigation Bar: Add Blog/Tools links, integrate Calendly CTA.
+        *   Hero Section: Update CTA to Calendly link from Strapi.
+        *   Our Works Preview: Fetch featured Case Studies from Strapi.
+        *   Trusted Clients: Fetch updated client logos from Strapi.
+        *   About Us Page: Fetch team member details (including images) from Strapi.
+        *   Contact Us Page:
+            *   Integrate updated contact info and Calendly link from Strapi.
+            *   Develop and integrate the engaging AI lead magnet form.
+            *   Implement lead form data recording mechanism (e.g., to CRM, database, or email + Google Sheet).
+    *   **Build New Sections/Pages:**
+        *   Case Studies Page (listing and individual case study views, fetched from Strapi).
+        *   Blog Page (listing and individual posts, fetched from Strapi).
+        *   Tools Directory Page (fetched from Strapi).
+    *   **Image Management:** Prioritize using Strapi for new dynamic images (team, case studies, client logos).
+
+4.  **Branding and Styling Review: [REVIEW]**
+    *   Ensure new sections and components align with the established brand identity and theme.
+
+5.  **Testing & Deployment: [TODO]**
+    *   Thoroughly test all new/updated pages, forms, links, and functionality locally.
+    *   Test lead generation flow and data capture mechanisms.
+    *   Configure deployment (e.g., Netlify) with Strapi environment variables.
+    *   Set up webhooks from Strapi to trigger rebuilds on content changes.
+    *   Deploy and test the live site thoroughly.
+
+This refined game plan focuses on the actionable new and pending items for development. 

@@ -167,10 +167,10 @@ const ContactUs = () => {
                 </DetailIcons>
                 <Detail>
                   <DetailTitle>Email</DetailTitle>
-                  <Link href="mailto:hello@Tran Development.com" passHref>
-                    <a aria-label="Send an email to Tran Development@gmail.com">
+                  <Link href="mailto:kyletran@trandev.net" passHref>
+                    <a aria-label="Send an email to kyletran@trandev.net">
                       {" "}
-                      <DetailDescription>hello@Tran Development.com</DetailDescription>
+                      <DetailDescription>kyletran@trandev.net</DetailDescription>
                     </a>
                   </Link>
                 </Detail>
@@ -181,9 +181,9 @@ const ContactUs = () => {
                 </DetailIcons>
                 <Detail>
                   <DetailTitle>Phone</DetailTitle>
-                  <Link href="tel:+918590302905" passHref>
-                    <a aria-label="Call +91 8590302905">
-                      <DetailDescription>+91 8590302905</DetailDescription>
+                  <Link href="tel:+14085477240" passHref>
+                    <a aria-label="Call (408) 547-7240">
+                      <DetailDescription>(408) 547-7240</DetailDescription>
                     </a>
                   </Link>
                 </Detail>
@@ -195,19 +195,26 @@ const ContactUs = () => {
                 <Detail>
                   <DetailTitle>Social</DetailTitle>
                   <SocialDiv>
-                  <Link href="https://www.linkedin.com/company/Tran Development/" passHref>
-                  <a aria-label="Visit Tran Development LinkedIn page" target="_blank" rel="noopener noreferrer">
+                  <Link href="https://www.linkedin.com/company/tran-development/" passHref>
+                    <a aria-label="Visit Tran Development LinkedIn page" target="_blank" rel="noopener noreferrer">
                       <DetailDescription>LinkedIn</DetailDescription>
-                    </a>
-                  </Link>
-                  <Link href="https://www.instagram.com/Tran Development.official/" passHref>
-                  <a aria-label="Visit Tran Development Instagram page" target="_blank" rel="noopener noreferrer">
-                      <DetailDescription>Instagram</DetailDescription>
                     </a>
                   </Link>
                   </SocialDiv>
                 </Detail>
-                
+              </Contact>
+              <Contact>
+                <DetailIcons>
+                  <SocialIcon aria-label="Schedule a meeting"/>
+                </DetailIcons>
+                <Detail>
+                  <DetailTitle>Schedule a Meeting</DetailTitle>
+                  <Link href="https://calendly.com/trandev/30min" passHref>
+                    <a aria-label="Schedule a meeting via Calendly" target="_blank" rel="noopener noreferrer">
+                      <DetailDescription>Calendly</DetailDescription>
+                    </a>
+                  </Link>
+                </Detail>
               </Contact>
             </ContactDetails>
           </LeftSection>

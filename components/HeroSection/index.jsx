@@ -146,7 +146,7 @@ const HeroSection = () => {
             </HeroDescription>
 
             
-              <Link href="#heroContact" passHref><a><HeaderButton onClick={()=>inputRef.current.focus()}>Explore Our AI Solutions</HeaderButton></a></Link>
+              <Link href="https://calendly.com/trandev/30min" passHref><a target="_blank" rel="noopener noreferrer"><HeaderButton>Schedule a Free Consultation</HeaderButton></a></Link>
             
 
             <StarDiv role="img" aria-label="5 out of 5 stars">
