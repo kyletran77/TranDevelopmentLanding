@@ -1,6 +1,6 @@
 import React,{ useState, useEffect } from "react";
 import Links from "../../../data/menuLinks";
-import LogoImage from "/public/images/62375b2bd5c8856bf9e4f5df_Logo.png";
+import LogoImage from "/public/images/TranDevPRKit/full_tdev_logo.svg";
 import {
   Logo,
   LogoText,
@@ -19,7 +19,7 @@ import Link from "next/link";
 const ChildNavbar = ({ toggle}) => {
   const [scrollNav, setScrollNav] = useState(false);
 
-  const LogoValue = "text";
+  const LogoValue = "logo";
 
 
   const changeNav = () => {
@@ -39,7 +39,7 @@ const ChildNavbar = ({ toggle}) => {
     <Nav  scrollNav={scrollNav} >
       <NavContainer>
         <NavLink href="/">
-         <NavLinkA aria-label="Intelpik Home">{LogoValue === "text" ? <Link href="https://intelpik.com/"><LogoText>Intelpik.</LogoText></Link> :<Logo src={LogoImage.src} alt="logo" />}</NavLinkA>
+         <NavLinkA aria-label="Tran Development Home">{LogoValue === "text" ? <Link href="/"><LogoText>Tran Development</LogoText></Link> :<Logo src={LogoImage.src} alt="Tran Development logo" />}</NavLinkA>
         </NavLink>
         <MobileMenu onClick={toggle}>
           <MenuIcon />

@@ -8,7 +8,7 @@ const Sidebar = ({ isOpen,toggle}) => {
     
     <SidebarContainer isOpen={isOpen} onClick={toggle} >
       {/* <LogoContainer>
-        <Link href="/" passHref><a><LogoText>Intelpik.</LogoText></a></Link>
+        <Link href="/" passHref><a><LogoText>Tran Development</LogoText></a></Link>
       </LogoContainer> */}
         <IconContainer onClick={toggle}>
             <CloseIcon/>

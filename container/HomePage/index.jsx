@@ -12,7 +12,7 @@ import Testimonials from "../../components/Testimonials"
 import TrustedClients from "../../components/TrustedClients"
 import Values from "../../components/Values"
 import Link from 'next/link';
-import { BsWhatsapp } from 'react-icons/bs';
+import { BsEnvelope } from 'react-icons/bs';
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 
@@ -24,8 +24,8 @@ const HomePage = () => {
     position: fixed;
     bottom: 40px;
     left: 40px;
-    background-color: #25d366;
-    color: #fff;
+    background-color: #00ffb0; /* Updated to Tran Development mint green */
+    color: #02022b; /* Dark blue text for better contrast */
     padding: 11px 16px;
     border-radius: 50%;
     display: grid;
@@ -51,12 +51,12 @@ const HomePage = () => {
       <Testimonial />
       <FAQ />
       <ContactUs />
-      <a target='_blank' href="https://wa.me/+918590302905" aria-label="Chat with us on WhatsApp">
+      <a target='_blank' href="mailto:kyle@trandevelopment.io" aria-label="Contact us via email">
         <FloatingButton 
           initial={{ opacity: 0 , y:25}}
           whileInView={{ opacity: 1, y:0 }}
         > 
-          <FloatingButtonIcon><BsWhatsapp></BsWhatsapp></FloatingButtonIcon>
+          <FloatingButtonIcon><BsEnvelope></BsEnvelope></FloatingButtonIcon>
         </FloatingButton>
       </a>
 

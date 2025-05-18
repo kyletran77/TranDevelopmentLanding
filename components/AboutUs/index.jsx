@@ -23,20 +23,17 @@ const AboutUs = () => {
           <AboutBelow>
             <AboutImageDiv
             >
-              <AboutImage src="/images/about.jpeg" alt="Two female team members discussing project"/>
+              <AboutImage src="/images/about.jpeg" alt="Team working on AI development"/>
             </AboutImageDiv>
             <AboutContent>
-              <AboutTitle>About US</AboutTitle>
+              <AboutTitle>About Us</AboutTitle>
               <AboutDescription>
-              We focus on developing solutions that can help you grow your business, 
-              increase your sales, and improve your bottom line. We do this by understanding
-              your specific needs and challenges, developing custom solutions, and being 
-              passionate about our work.If you are looking for a web development agency that 
-              can help you achieve your business goals, then Intelpik is the 
-              solution for you.
+              Tran Development is a boutique software agency specializing in end-to-end AI and data solutions that transform academic research into scalable products. With deep expertise in EdTech, AI-driven analytics, and enterprise integrations, we guide clients through a full-cycle development process—from Discovery & Ideation to Scale & Grow. 
+              
+              Recently, we've expanded our offering to help organizations integrate AI directly into their workflows, leveraging AI for product development, marketing automation, sales processes, and code optimization.
               </AboutDescription>
               <Link href='#contact-us'>
-                <AboutButton>Accelerate your growth</AboutButton>
+                <AboutButton>Schedule a Discovery Call</AboutButton>
                 </Link>
             </AboutContent>
           </AboutBelow>

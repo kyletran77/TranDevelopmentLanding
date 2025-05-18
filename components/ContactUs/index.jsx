@@ -167,10 +167,10 @@ const ContactUs = () => {
                 </DetailIcons>
                 <Detail>
                   <DetailTitle>Email</DetailTitle>
-                  <Link href="mailto:hello@intelpik.com" passHref>
-                    <a aria-label="Send an email to intelpik@gmail.com">
+                  <Link href="mailto:hello@Tran Development.com" passHref>
+                    <a aria-label="Send an email to Tran Development@gmail.com">
                       {" "}
-                      <DetailDescription>hello@intelpik.com</DetailDescription>
+                      <DetailDescription>hello@Tran Development.com</DetailDescription>
                     </a>
                   </Link>
                 </Detail>
@@ -195,13 +195,13 @@ const ContactUs = () => {
                 <Detail>
                   <DetailTitle>Social</DetailTitle>
                   <SocialDiv>
-                  <Link href="https://www.linkedin.com/company/intelpik/" passHref>
-                  <a aria-label="Visit Intelpik LinkedIn page" target="_blank" rel="noopener noreferrer">
+                  <Link href="https://www.linkedin.com/company/Tran Development/" passHref>
+                  <a aria-label="Visit Tran Development LinkedIn page" target="_blank" rel="noopener noreferrer">
                       <DetailDescription>LinkedIn</DetailDescription>
                     </a>
                   </Link>
-                  <Link href="https://www.instagram.com/intelpik.official/" passHref>
-                  <a aria-label="Visit Intelpik Instagram page" target="_blank" rel="noopener noreferrer">
+                  <Link href="https://www.instagram.com/Tran Development.official/" passHref>
+                  <a aria-label="Visit Tran Development Instagram page" target="_blank" rel="noopener noreferrer">
                       <DetailDescription>Instagram</DetailDescription>
                     </a>
                   </Link>

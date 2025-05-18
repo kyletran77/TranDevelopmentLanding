@@ -39,14 +39,14 @@ a {
     padding: 0;
     margin: 0;
     letter-spacing:0.8;
-    user-select:none;
+    /* user-select:none; */ /* Allow text selection */
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    /* -webkit-user-select: none; */ /* Allow text selection */
+    /* -khtml-user-select: none; */ /* Allow text selection */
+    /* -moz-user-select: none; */ /* Allow text selection */
+    /* -ms-user-select: none; */ /* Allow text selection */
+    /* user-select: none; */ /* Allow text selection */
     letter-spacing:0.8;
     /* transition: all 0.2s ease-in-out ; */
     font-family: 'Plus Jakarta Sans', sans-serif;

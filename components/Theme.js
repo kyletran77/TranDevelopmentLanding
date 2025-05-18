@@ -1,15 +1,16 @@
 export const theme = {
   colors: {
-    primaryText: "#000000",
+    primaryText: "#02022b",
     primaryInvertedText: "#fff",
     secondaryText: "#FFFFFF",
-    primaryBackground: "#5928e5",
-    secondaryBackground: "#fcef6d",
-    accentBackground: "#6368E5",
-    primary: "#FFFDF6",
-    secondary: "#FEE33A",
-    teritory:"#1D1A26",
-    accent: "#6368E5",
+    primaryBackground: "#5f5fc9",
+    secondaryBackground: "#00ffb0",
+    accentBackground: "#48d0ff",
+    primary: "#FFFFFF",
+    secondary: "#00ffb0",
+    teritory: "#272782",
+    accent: "#4225a3",
+    highlight: "#c696d2",
   },
 
   fontSizes: {
@@ -58,10 +59,10 @@ export const theme = {
   ],
   buttons: {
     primary: {
-      color: "#1D1A26",
+      color: "#272782",
       width: "fit-content",
       boxSizing:"border-box",
-      backgroundColor: "#FFD338",
+      backgroundColor: "#00ffb0",
       display: "inline-block",
       border:'none',
       textDecoration: "none",
@@ -92,11 +93,11 @@ export const theme = {
     secondary: {
       color: "#FFFFFF",
       boxSizing:"border-box",
-      backgroundColor: "#1D1A26",
+      backgroundColor: "#5f5fc9",
       display: "inline-block",
       textDecoration: "none",
       border: "none",
-      borderRadius: "3px",
+      borderRadius: "10px",
       padding: "13.5px 50px",
       fontSize: "1.199rem",
       fontWeight: "600",
@@ -117,7 +118,7 @@ export const theme = {
       }
     },
     teritary: {
-      color: "#000",
+      color: "#272782",
       textDecoration: "underline",
       boxSizing:"border-box",
       display: "inline-block",
@@ -143,13 +144,13 @@ export const theme = {
       }
     },
     quaternary: {
-      color: "#000",
+      color: "#272782",
       backgroundColor: 'transparent',
       display: "inline-block",
       boxSizing:"border-box",
       textDecoration: "none",
-      borderRadius: "3px",
-      border: "2px solid #FFD338",
+      borderRadius: "10px",
+      border: "2px solid #48d0ff",
       padding: "13.5px 32px",
       fontSize: "1.199rem",
       textAlign:"center",

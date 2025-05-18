@@ -88,11 +88,15 @@ cursor: pointer;
 export const FaqAnswer = styled.p`
 font-size:18px;
 margin-top:15px;
-line-height:140%;
-color:#dbdbdb;
-padding-left:15px;
+line-height:150%;
+color:#f0f0f0;
+padding: 15px 20px;
+border-left: 3px solid #00ffb0;
+background-color: rgba(255, 255, 255, 0.05);
+border-radius: 0 8px 8px 0;
 @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 15px;
+    padding: 10px 15px;
 }
 `;
 export const Icon = styled.p`
@@ -111,20 +115,25 @@ color:#fff;
 
 export const FaqHeader = styled.h2`
 ${MainHeading}
-/*line-height:140%;
-margin-top: 0 !important;
-font-size: 3.5rem;
-font-family: "Grifter-bold", sans-serif;
-margin-bottom: 2.5rem;
-text-align: center;
+color: #fff;
+position: relative;
+margin-bottom: 3rem;
+
+&:after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: #00ffb0;
+  border-radius: 2px;
+}
 
 @media(max-width: ${({ theme }) => theme.breakpoints.mobile}){
-  font-size: 33px;
+  margin-bottom: 2rem;
 }
-@media(max-width: ${({ theme }) => theme.breakpoints.smallestMobile}){
-  font-size: 25px;
-  margin-bottom: 0rem;
-}*/
 `;
 
 export const QuestionWrapper = styled.div`

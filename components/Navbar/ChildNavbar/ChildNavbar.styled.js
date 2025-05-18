@@ -35,11 +35,11 @@ export const NavContainer = styled(motion.div)`
 `;
 
 export const Logo = styled(motion.img)`
-  width: 45px;
+  width: 180px;
   height: auto;
   max-height:100%;
   object-position:center;
-  object-fit: cover;
+  object-fit: contain;
   cursor: pointer;
 `;
 

@@ -125,7 +125,17 @@ export const LeftImg = styled.div`
 export const BeginButton = styled.button`
     ${PrimaryButton}
     width: 100%;
-    background: white;
+    background: #272782;
+    color: white;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background: white;
+        color: #272782;
+        border: 2px solid #272782;
+    }
+    
     @media (max-width: ${({ theme }) => theme.breakpoints.smallTablet}) {
         padding: 16px 35px;
     };
@@ -157,10 +167,15 @@ export const RightSections = styled.div`
 export const Numbers = styled.div`
     width: 40%;
     padding: 40px 30px;
-    background: #fec9c1;
+    background: #00ffb0;
     border-radius: 10px;
     & h2 {
         font-size: 3rem;
+        color: #272782;
+    }
+    & p {
+        color: #272782;
+        font-weight: 600;
     }
     text-align: center;
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {

@@ -1,0 +1,288 @@
+## TranDevelopmentLanding Template - Content & Strapi Roadmap
+
+This document outlines the pages, sections, and components in the Next.js template that need content updates, and the corresponding information required. This will help in planning content collection and structuring your Strapi CMS.
+
+**Tran Development Summary (for reference):**
+Tran Development is a boutique software agency founded by Kyle Tran, specializing in end-to-end AI and data solutions that transform academic research into scalable products. With deep expertise in EdTech, AI-driven analytics, and enterprise integrations, Tran Development guides clients through a full-cycle development process—Discovery & Ideation, Prototype & Feasibility, MVP Development, and Scale & Grow. Key clients include UC Irvine research labs and educational platforms, where Tran Development has delivered measurable improvements in student engagement, operational efficiency, and data-driven insights. Our mission is to empower organizations—academic, nonprofit, or enterprise—to unlock the value of their data and AI initiatives with compliant, robust, and user-centric software.
+
+Recently, we've expanded our offering to help organizations integrate AI directly into their workflows, leveraging AI for product development, marketing automation, sales processes, and code optimization. This end-to-end AI consultancy sets us apart from traditional product development firms, ensuring clients not only build AI products but also adopt AI-driven practices that enhance every facet of their business.
+
+---
+
+**Brand Assets & Colors: [DONE]**
+
+*   **Main Logo File:** `public/images/TranDevPRKit/full_tdev_logo.svg` **[DONE - Integrated]**
+*   **Favicon File:** `public/images/TranDevPRKit/color_tdev_logo.svg` **[DONE - Integrated]**
+*   **Primary Color Palette (extracted from SVGs):** **[DONE - Applied to Theme.js]**
+    *   Vibrant Mint Green: `#00ffb0`
+    *   Bright Sky Blue: `#48d0ff`
+    *   Medium Purple-Blue: `#5f5fc9`
+    *   Dark Indigo: `#272782`
+    *   Deep Violet: `#4225a3`
+    *   Light Lavender/Pinkish-Purple: `#c696d2`
+    *   Dark Blue Text Color: `#02022b` (consider for body text or dark themes)
+*   **Considerations for Theming:**
+    *   Use the vibrant greens/blues for primary actions, highlights, and accents.
+    *   The purples can be used for secondary elements or to create depth.
+    *   The dark indigo and deep violet can serve as base colors or for text.
+    *   Ensure sufficient contrast for accessibility, especially with text over colored backgrounds.
+
+---
+
+**I. Global Site Elements & Settings**
+
+These elements appear across multiple pages or define site-wide settings. In Strapi, this could be a "Global" or "Site Settings" Single Type.
+
+1.  **Navigation Bar (`components/Navbar/`) [DONE - Logo and Links Updated]**
+    *   **Information Needed:**
+        *   Site Logo: Use `public/images/TranDevPRKit/full_tdev_logo.svg` **[DONE]**
+        *   Navigation Link Text (e.g., Home, About, Services, AI Solutions, Portfolio, Contact) **[DONE - Updated in `data/menuLinks.js`]**
+        *   Navigation Link URLs (internal page paths or external links)
+    *   **Strapi Consideration:** Links could be managed as a repeatable component within Global Settings. Logo path could be stored or directly referenced.
+
+2.  **Footer (`components/Footer/`) [DONE - Content Updated]**
+    *   **Information Needed:**
+        *   Copyright Text: © [Current Year] Tran Development. All rights reserved. **[DONE]**
+        *   Social Media Links (URLs for LinkedIn, GitHub if applicable, etc.) **[Partially Done - Structure exists, actual links can be added to Strapi/code]**
+        *   Contact Information: (Email, Phone - from Tran Development) **[DONE - Email updated]**
+        *   Privacy Policy / Terms of Service Links
+    *   **Strapi Consideration:** Fields in Global Settings for copyright, repeatable component for social links.
+
+3.  **Favicon & Site Metadata [DONE - Updated in `pages/index.js`]**
+    *   **Information Needed:**
+        *   Favicon image: Use `public/images/TranDevPRKit/color_tdev_logo.svg` **[DONE]**
+        *   Site Title: Tran Development | AI & Data Solutions for Scalable Products **[DONE]**
+        *   Site Description (for SEO): Tran Development specializes in end-to-end AI and data solutions, transforming academic research and business processes into scalable products. Expertise in EdTech, AI analytics, and enterprise AI integration. **[DONE]**
+    *   **Strapi Consideration:** Fields in Global Settings for site title and description. Favicon is usually placed in `public/` but its path could be stored in settings if needed by a component.
+
+**II. Homepage Content (`pages/index.js` & `container/HomePage/`)**
+
+The homepage typically aggregates several sections. In Strapi, you might have a "Homepage" Single Type that has fields to populate these sections or relations to other Collection Types.
+
+1.  **Hero Section (`components/HeroSection/`) [DONE - Content Updated]**
+    *   **Information Needed:**
+        *   Main Headline Text: e.g., "Transforming Research & Business with AI-Powered Solutions" or "End-to-End AI and Data Solutions for Scalable Products" **[DONE]**
+        *   Sub-headline or Descriptive Text: e.g., "Tran Development: From academic insights to market-ready AI products. We guide you through discovery, prototyping, MVP development, and scaling your AI initiatives." or "Boutique software agency specializing in EdTech, AI-driven analytics, and enterprise integrations. Let us help you unlock the value of your data." **[DONE]**
+        *   Primary Call-to-Action (CTA) Button Text: e.g., "Explore Our AI Solutions", "Get a Consultation" (Style with primary brand colors like `#00ffb0` or `#48d0ff`) **[DONE - Text and Style]**
+        *   Primary CTA Button Link
+        *   Background Image(s) or Video (relevant to AI, data, technology, collaboration - potentially with color overlays using brand palette)
+    *   **Strapi Consideration:** Fields within Homepage Single Type or a dedicated "Hero" component.
+
+2.  **Services Overview (If present on Homepage - links to `components/Services/`)**
+    *   **Information Needed:**
+        *   Section Title: e.g., "Our Core Expertise" or "AI-Driven Development Services"
+        *   Brief introductory text: e.g., "We offer a full-cycle development process, from discovery and ideation to MVP development and scaling, with a new focus on integrating AI directly into your organizational workflows."
+        *   Summary of 2-4 key services (Title, short description, icon/image for each):
+            *   AI & Data Solutions for Research
+            *   Enterprise AI Integration
+            *   AI for Product Development
+            *   AI-Driven Workflow Automation (Marketing, Sales, Code Opt.)
+        *   Link to main Services page
+    *   **Strapi Consideration:** Relation to `Service` Collection Type, allowing selection of featured services.
+
+3.  **Features Overview (`components/Features/`)**
+    *   **Information Needed:**
+        *   Section Title: e.g., "Why Partner with Tran Development?"
+        *   List of features:
+            *   Feature Title: End-to-End AI & Data Solutions
+            *   Feature Description: From transforming academic research into scalable products to integrating AI into your core business workflows.
+            *   Icon or small image (consider using brand accent colors)
+            *   Feature Title: Full-Cycle Development Process
+            *   Feature Description: Guiding clients through Discovery & Ideation, Prototype & Feasibility, MVP Development, and Scale & Grow.
+            *   Icon or small image
+            *   Feature Title: Specialized Expertise
+            *   Feature Description: Deep knowledge in EdTech, AI-driven analytics, and enterprise integrations.
+            *   Icon or small image
+            *   Feature Title: End-to-End AI Consultancy
+            *   Feature Description: We help you build AI products *and* adopt AI-driven practices across your business.
+            *   Icon or small image
+    *   **Strapi Consideration:** Repeatable component for features within Homepage, or a relation to a `Feature` Collection Type.
+
+4.  **About Us Snippet (If present on Homepage - links to `components/AboutUs/`) [DONE - Content Updated in `components/AboutUs/index.jsx`]**
+    *   **Information Needed:**
+        *   Section Title: e.g., "About Tran Development"
+        *   Short paragraph summarizing the company/project: "Tran Development, founded by Kyle Tran, is a boutique software agency specializing in end-to-end AI and data solutions. We transform academic research into scalable products and help organizations integrate AI directly into their workflows." **[DONE]**
+        *   Link to the full "About Us" page.
+        *   Optional: A representative image.
+    *   **Strapi Consideration:** Text fields on Homepage Single Type.
+
+5.  **Our Works/Portfolio Preview (`components/OurWorks/`)**
+    *   **Information Needed:**
+        *   Section Title: e.g., "Success Stories" or "Our Impact"
+        *   Preview of 2-4 projects (based on UC Irvine research labs, educational platforms mentioned):
+            *   Project Title
+            *   Project Thumbnail Image
+            *   Short project description: e.g., "Delivered measurable improvements in student engagement for UC Irvine." or "Enhanced operational efficiency through AI-driven analytics."
+            *   Link to individual project details or main "Our Works" page.
+    *   **Strapi Consideration:** Relation to `Project`/`Work` Collection Type, allowing selection of featured projects.
+
+6.  **Testimonials (`components/Testimonials/` or `components/Testimonial/`)**
+    *   **Information Needed:**
+        *   Section Title: "What Our Clients Say"
+        *   List of testimonials (You'll need to gather these from clients like UC Irvine research labs, educational platforms):
+            *   Quote/Text
+            *   Author's Name
+            *   Author's Title/Company
+            *   Author's Photo (optional)
+    *   **Strapi Consideration:** Relation to `Testimonial` Collection Type.
+
+7.  **Trusted Clients / Partners (`components/TrustedClients/`)**
+    *   **Information Needed:**
+        *   Section Title: e.g., "Key Clients & Partners"
+        *   List of Client Logos: UC Irvine (and other educational platforms/research labs) **[Needs update in HeroSection slider and/or this component]**
+        *   Optional: Client names or links to their websites.
+    *   **Strapi Consideration:** A `Client` Collection Type (name, logo, URL) and a relation on the Homepage.
+
+8.  **Values (`components/Values/`)**
+    *   **Information Needed:**
+        *   Section Title: "Our Core Values"
+        *   List of values (derived from summary):
+            *   Value Title/Name: Empowerment through Data & AI
+            *   Value Description: Empowering organizations to unlock the value of their data and AI initiatives.
+            *   Value Title/Name: User-Centric Solutions
+            *   Value Description: Delivering compliant, robust, and user-centric software.
+            *   Value Title/Name: Innovation & Scalability
+            *   Value Description: Transforming academic research into scalable products and adopting cutting-edge AI practices.
+    *   **Strapi Consideration:** A `Value` Collection Type or a repeatable component on the Homepage/About Us page.
+
+9.  **Call To Action (CTA) Section (If a dedicated one exists beyond Hero)**
+    *   **Floating Button: [DONE - Updated to Email CTA in `container/HomePage/index.jsx`]**
+    *   **Information Needed:**
+        *   Headline Text: e.g., "Ready to Leverage AI in Your Organization?"
+        *   Supporting Text: "Contact Tran Development today to discuss how our end-to-end AI consultancy can transform your products and processes."
+        *   Button Text: "Schedule a Discovery Call"
+        *   Button Link
+    *   **Strapi Consideration:** Text and link fields on Homepage Single Type.
+
+**III. Individual Pages (`pages/`)**
+
+1.  **About Us Page (`pages/about.js`, content from `components/AboutUs/`)**
+    *   **Information Needed:**
+        *   Page Title: "About Tran Development"
+        *   Detailed company history, mission, vision:
+            *   **History/Founding:** "Tran Development is a boutique software agency founded by Kyle Tran..." **[DONE in component]**
+            *   **Mission:** "Our mission is to empower organizations—academic, nonprofit, or enterprise—to unlock the value of their data and AI initiatives with compliant, robust, and user-centric software." **[DONE in component]**
+            *   **Vision/Approach:** "Specializing in end-to-end AI and data solutions that transform academic research into scalable products. With deep expertise in EdTech, AI-driven analytics, and enterprise integrations, Tran Development guides clients through a full-cycle development process—Discovery & Ideation, Prototype & Feasibility, MVP Development, and Scale & Grow... Recently, we've expanded our offering to help organizations integrate AI directly into their workflows, leveraging AI for product development, marketing automation, sales processes, and code optimization. This end-to-end AI consultancy sets us apart from traditional product development firms, ensuring clients not only build AI products but also adopt AI-driven practices that enhance every facet of their business." **[DONE in component]**
+        *   Team member information (Kyle Tran, and any other key members): Photos, names, titles, bios.
+        *   Company values (expanded descriptions if needed).
+        *   Relevant images (team, office, conceptual).
+    *   **Strapi Consideration:** An "About Page" Single Type, potentially with a repeatable component for team members or relation to a `TeamMember` Collection Type.
+
+2.  **Services Page (`pages/services.js`, content from `components/Services/`)**
+    *   **Information Needed:**
+        *   Page Title: "Our AI & Software Development Services"
+        *   Introductory text about services: "Tran Development offers a comprehensive suite of services designed to take your AI and data initiatives from concept to reality, and to integrate AI seamlessly into your existing operations."
+        *   Detailed list of services:
+            *   **Service Name/Title:** End-to-End AI & Data Solutions for Research
+            *   **Full Description:** "We specialize in transforming academic research into scalable, market-ready products. Our process covers discovery, ideation, prototyping, feasibility studies, MVP development, and growth strategies, with a focus on AI and data-intensive projects."
+            *   Associated Image or Icon
+            *   **Service Name/Title:** Enterprise AI Integration
+            *   **Full Description:** "Leverage our expertise in integrating sophisticated AI tools and platforms into your existing enterprise systems. We ensure seamless adoption and measurable improvements in efficiency and insights."
+            *   Associated Image or Icon
+            *   **Service Name/Title:** AI for Product Development
+            *   **Full Description:** "Incorporate AI at the core of your product strategy. We help design, build, and launch innovative AI-driven products that provide unique value to your users."
+            *   Associated Image or Icon
+            *   **Service Name/Title:** AI-Driven Workflow Automation
+            *   **Full Description:** "Expand your organization's capabilities by integrating AI directly into your workflows. We assist with AI for marketing automation, sales process optimization, code generation and optimization, and more."
+            *   Associated Image or Icon
+            *   **Service Name/Title:** Full-Cycle Development Process
+            *   **Full Description:** "Our proven methodology includes: Discovery & Ideation, Prototype & Feasibility, MVP Development, and Scale & Grow, ensuring a structured path to success."
+            *   Associated Image or Icon
+            *   **Service Name/Title:** End-to-End AI Consultancy
+            *   **Full Description:** "Beyond product development, we provide consultancy to help you adopt AI-driven practices that enhance every facet of your business, setting you apart from traditional firms."
+            *   Associated Image or Icon
+        *   Call to action for each service or general CTA for the page.
+    *   **Strapi Consideration:** A `Service` Collection Type. This page would list all entries from that collection.
+
+3.  **Our Works / Portfolio Page (`pages/works.js` or similar, content from `components/OurWorks/`)**
+    *   **Information Needed:**
+        *   Page Title: "Our Portfolio | Case Studies"
+        *   Introductory text: "Explore how Tran Development has partnered with organizations like UC Irvine research labs and educational platforms to deliver measurable improvements."
+        *   Grid/List of all projects (gather details for each):
+            *   Project Title (e.g., "AI for Enhanced Student Engagement at UC Irvine")
+            *   Project Images
+            *   Detailed Project Description (challenge, solution, outcome, metrics like "measurable improvements in student engagement, operational efficiency, and data-driven insights")
+            *   Technologies Used (AI, specific platforms, etc.)
+            *   Client Name: (e.g., UC Irvine Research Lab)
+            *   Link to live project (if applicable) or testimonial
+    *   **Strapi Consideration:** A `Project` or `Work` Collection Type. This page would list all entries.
+
+4.  **Contact Us Page (`pages/contact.js`, content from `components/ContactUs/`)**
+    *   **Information Needed:**
+        *   Page Title: "Contact Tran Development" or "Let's Discuss Your AI Initiative"
+        *   Contact Form: Check for any hardcoded labels or placeholder text.
+        *   Email Address(es) for Tran Development
+        *   Phone Number(s) for Tran Development
+        *   Physical Address (if applicable)
+        *   Map Embed (if applicable)
+    *   **Strapi Consideration:** A "Contact Page" Single Type for text, contact details.
+
+5.  **FAQ Page (`pages/faq.js` or similar, content from `components/FAQ/`)**
+    *   **Information Needed:**
+        *   Page Title: "Frequently Asked Questions"
+        *   List of questions and their corresponding answers (you'll need to develop these based on common queries about your services, process, AI, etc.).
+            *   e.g., "What kind of organizations do you work with?" (Answer: Academic, nonprofit, or enterprise)
+            *   e.g., "What is your development process?" (Answer: Discovery & Ideation, Prototype & Feasibility, MVP Development, and Scale & Grow)
+    *   **Strapi Consideration:** An `FAQItem` Collection Type (question, answer, category). This page lists all FAQs.
+
+**IV. Data Files (`data/`)**
+
+*   **Action:** Examine any JSON files or JavaScript objects in this directory. This data is likely used to populate components. **[DONE - `menuLinks.js` updated]**
+*   **Information Needed:** The structure of these files will directly inform the fields needed in your Strapi Collection Types. For example, if `data/testimonials.json` has objects with `quote`, `author`, `company`, your `Testimonial` Collection Type in Strapi will need these fields.
+*   **Goal:** Replace reliance on these static files by fetching equivalent data from Strapi, informed by the content gathered above.
+
+**V. Images (`public/images/`)**
+
+*   **Action:** Systematically replace all images with your own branded assets.
+    *   `CLIENTS/`: UC Irvine logo, other client logos. **[TODO - Client logos in Hero slider need updating]**
+    *   `MOCKUPS/`, `MOCKUPS1/`: Images relevant to AI, data, EdTech, research, product development. **[TODO - General images like `about.jpeg` and `banner.jpeg` can be reviewed/replaced]**
+    *   Ensure the main logo (`public/images/TranDevPRKit/full_tdev_logo.svg`) and favicon (`public/images/TranDevPRKit/color_tdev_logo.svg`) are correctly referenced in the code. **[DONE]**
+*   **Information Needed:**
+    *   Tran Development's logo (`public/images/TranDevPRKit/full_tdev_logo.svg`). **[DONE]**
+    *   Favicon (`public/images/TranDevPRKit/color_tdev_logo.svg`). **[DONE]**
+    *   A collection of high-quality images for all sections.
+    *   Client logos.
+*   **Strapi Consideration:** Most images that are *content* will be uploaded to Strapi. The primary logo and favicon might be referenced directly from `public/` or their paths could be stored in Strapi's Global Settings for more dynamic control.
+
+**VI. Branding and Styling (CSS / Theme Files) [DONE - Theme.js updated for colors and button styles]**
+
+*   **Action:**
+    *   Locate the global CSS or theme configuration files. **[DONE - `components/Theme.js` identified and updated]**
+    *   Update color variables and styles to match the **Primary Color Palette** identified above. **[DONE]**
+    *   Ensure fonts are consistent with Tran Development's branding (if specific fonts are chosen). **[Font consistency can be reviewed further if specific brand fonts are provided]**
+*   **Information Needed:** The defined **Primary Color Palette**. **[DONE]**
+*   **Goal:** Visually align the template with Tran Development's brand identity.
+
+**VII. General Text & Labels [Partially Done - Hero, About, Footer, Buttons updated. Other components need review]**
+
+*   **Action:** Search the codebase for any hardcoded text strings.
+*   **Information Needed:** Your preferred wording (e.g., "Learn More", "Explore Services").
+*   **Strapi Consideration:** Some could be in Global Settings in Strapi.
+
+**Roadmap / Process Outline:**
+
+1.  **Content Gathering:**
+    *   Use this document as a checklist.
+    *   Optimize images.
+
+2.  **Strapi Setup: [TODO]**
+    *   Install Strapi.
+    *   Define Collection Types and Single Types.
+    *   Populate Strapi.
+
+3.  **Next.js Integration (Iterative Process): [TODO]**
+    *   Install Strapi SDK.
+    *   Configure API access.
+    *   Incrementally update sections.
+
+4.  **Branding and Styling: [DONE - Initial pass complete]**
+    *   Replace logo (`public/images/TranDevPRKit/full_tdev_logo.svg`) and favicon (`public/images/TranDevPRKit/color_tdev_logo.svg`) in the relevant HTML/components. **[DONE]**
+    *   Update CSS (global styles, component styles) to match the **Primary Color Palette** and fonts. **[DONE for colors and buttons via `Theme.js`; fonts can be further refined]**
+
+5.  **Testing & Deployment: [TODO]**
+    *   Test all pages and functionality locally.
+    *   Ensure your Netlify deployment is configured with Strapi environment variables.
+    *   Set up webhooks from Strapi to Netlify to trigger rebuilds when content changes.
+    *   Deploy and test the live site.
+
+This game plan should give you a solid foundation. Remember that this is an iterative process. Good luck!

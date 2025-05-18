@@ -24,6 +24,7 @@ import {
   ServiceHeader,
   ServiceHeadingDiv,
   ContactButton,
+  ServiceNumber,
 } from "./Services.styled";
 
 const Services = () => {
@@ -31,7 +32,7 @@ const Services = () => {
     <Section id="services">
       <Container>
         <ServiceHeader>
-          <WhatWeDo>What We do</WhatWeDo>
+          <WhatWeDo>WHAT WE DO</WhatWeDo>
           <ServiceHeadingDiv>
             <ServiceHeading>Services We Offer</ServiceHeading>
             <Link href='#contact-us'>
@@ -44,76 +45,98 @@ const Services = () => {
           <ServiceList>
 
             <Service
-              initial={{opacity:0,y:100}}
+              initial={{opacity:0,y:50}}
               whileInView={{opacity:1,y:0}}
-              transition={{duration:0.6,delay:0.5}}
+              transition={{duration:0.4,delay:0.1}}
               viewport={{ once: true}}
             >
+              <ServiceNumber className="service-number">01</ServiceNumber>
               <ServiceImage
-               alt="Web Development Icon"
-                initial={{ opacity: 0 ,x:-130}}
-                whileInView={{ opacity: 1,x:0 }}
-                transition={{duration:0.7,delay:0.8}}
-                viewport={{ once: true}}
-                src="/images/website development.svg"></ServiceImage>
-           
-                <ServiceTitle>
-                  Web Development
-                </ServiceTitle>
-              
-              <ServiceDetails>
-              Get the most out of web development and grow your business.
+                alt="AI Workflows Icon"
+                src="/images/website development.svg">
+              </ServiceImage>
+              <ServiceTitle>
+                AI Workflows
+              </ServiceTitle>
+              <ServiceDetails className="service-details">
+                Expand your organization's capabilities by integrating AI directly into your workflows. We assist with AI for marketing automation, sales process optimization, code generation, and data analysis.
               </ServiceDetails>
-              
-
             </Service>
 
             <Service
-              initial={{opacity:0,y:100}}
+              initial={{opacity:0,y:50}}
               whileInView={{opacity:1,y:0}}
-              transition={{duration:0.6,delay:0.6}}
+              transition={{duration:0.4,delay:0.2}}
               viewport={{ once: true}}
             >
+              <ServiceNumber className="service-number">02</ServiceNumber>
               <ServiceImage
-              alt="App Development Icon"
-                initial={{ opacity: 0 ,x:-130}}
-                              whileInView={{ opacity: 1,x:0 }}
-                              transition={{duration:0.7,delay:0.8}}
-                              viewport={{ once: true}}
-                src="/images/app development.svg"></ServiceImage>
-              
-                <ServiceTitle>
-                  App Development
-                </ServiceTitle>
-              
-              <ServiceDetails>
-                Mobile app development solutions that help you reach your target audience.
-              </ServiceDetails>             
-              
+                alt="Discovery & Ideation Icon"
+                src="/images/website development.svg">
+              </ServiceImage>
+              <ServiceTitle>
+                Discovery & Ideation
+              </ServiceTitle>
+              <ServiceDetails className="service-details">
+                We kick off with a collaborative workshop to capture your vision, define user personas, map workflows, and craft a crisp problem statement. You walk away with a high-level journey map and the Section C narrative you need for your grant.
+              </ServiceDetails>
             </Service>
 
             <Service
-              initial={{opacity:0,y:100}}
+              initial={{opacity:0,y:50}}
               whileInView={{opacity:1,y:0}}
-              transition={{duration:0.6,delay:0.7}}
+              transition={{duration:0.4,delay:0.3}}
               viewport={{ once: true}}
             >
+              <ServiceNumber className="service-number">03</ServiceNumber>
               <ServiceImage
-              alt="Digital Marketing Icon"
-                initial={{ opacity: 0 ,x:-130}}
-                whileInView={{ opacity: 1,x:0 }}
-                transition={{duration:0.7,delay:0.8}}
-                viewport={{ once: true}}
-                src="/images/digital marketing.svg"></ServiceImage>
-              
-                <ServiceTitle>
-                Digital Marketing
-                </ServiceTitle>
-              
-              <ServiceDetails>
-                <p>Strategic Digital Marketing Solutions for Business Growth</p>   
+                alt="Prototype & Feasibility Icon"
+                src="/images/app development.svg">
+              </ServiceImage>
+              <ServiceTitle>
+                Prototype & Feasibility
+              </ServiceTitle>
+              <ServiceDetails className="service-details">
+                Next, we validate your idea with a lightweight clickable prototype and a "drop-in" feasibility memo. We audit your data, compare AI-stack options (Vertex AI, open-source embeddings), and produce an architecture diagram plus budget & timeline estimates—perfect for reviewers.
               </ServiceDetails>
-              
+            </Service>
+
+            <Service
+              initial={{opacity:0,y:50}}
+              whileInView={{opacity:1,y:0}}
+              transition={{duration:0.4,delay:0.4}}
+              viewport={{ once: true}}
+            >
+              <ServiceNumber className="service-number">04</ServiceNumber>
+              <ServiceImage
+                alt="MVP Development Icon"
+                src="/images/digital marketing.svg">
+              </ServiceImage>
+              <ServiceTitle>
+                MVP Development
+              </ServiceTitle>
+              <ServiceDetails className="service-details">
+                Then we build your pilot-ready MVP: authentication, data pipeline, AI inference, and user interface. We handle CI/CD, basic monitoring, and bi-weekly stakeholder demos so you see progress every sprint.
+              </ServiceDetails>
+            </Service>
+
+            <Service
+              initial={{opacity:0,y:50}}
+              whileInView={{opacity:1,y:0}}
+              transition={{duration:0.4,delay:0.5}}
+              viewport={{ once: true}}
+            >
+              <ServiceNumber className="service-number">05</ServiceNumber>
+              <ServiceImage
+                alt="Scale & Grow Icon"
+                src="/images/digital marketing.svg">
+              </ServiceImage>
+              <ServiceTitle>
+                Scale & Grow
+              </ServiceTitle>
+              <ServiceDetails className="service-details">
+                Finally, we turn your pilot into a polished product. We run feature sprints based on user feedback, optimize performance and security (FERPA/NIH/NSF compliance), and set up grant-reporting exports. Ongoing support, health checks, and quarterly roadmap updates ensure you're ready to expand to new cohorts and funders.
+              </ServiceDetails>
             </Service>
 
           </ServiceList>

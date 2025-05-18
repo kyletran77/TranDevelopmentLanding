@@ -135,18 +135,18 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-            >We Build Solutions, Not Just Websites</Heading>
+            >Transforming Research & Business with AI-Powered Solutions</Heading>
 
             <HeroDescription
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1 }}
             >
-              We build solutions that get results, not just a pretty website
+              From academic insights to market-ready AI products. We guide you through discovery, prototyping, MVP development, and scaling your AI initiatives.
             </HeroDescription>
 
             
-              <Link href="#heroContact" passHref><a><HeaderButton onClick={()=>inputRef.current.focus()}>Lets Talk</HeaderButton></a></Link>
+              <Link href="#heroContact" passHref><a><HeaderButton onClick={()=>inputRef.current.focus()}>Explore Our AI Solutions</HeaderButton></a></Link>
             
 
             <StarDiv role="img" aria-label="5 out of 5 stars">
@@ -157,9 +157,9 @@ const HeroSection = () => {
               <StarImg src="/images/star svg.svg" alt="" aria-hidden="true"></StarImg>
             </StarDiv>
 
-            <ShowText>We&apos;re not just promising, we&apos;re proving.</ShowText>
+            <ShowText>From concept to deployment - AI solutions that deliver measurable results.</ShowText>
 
-            <PeopleFaces src="/images/clients-intelpik.png" alt="clients prfoile images"></PeopleFaces>
+            <PeopleFaces src="/images/clients-intelpik.png" alt="clients profile images"></PeopleFaces>
 
           </Hero>
           <ContactUs1 />

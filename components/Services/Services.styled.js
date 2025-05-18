@@ -147,16 +147,19 @@ export const ServiceDetails = styled.div`
   line-height: 25px;
   text-align: center;
   padding: 10px 0px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  font-size: 16px;
+  
   @media screen and (max-width: ${({ theme }) => theme.breakpoints?.tablet}) {
-    width: 60%;
-
+    width: 90%;
   }
+  
   @media screen and (max-width: ${({ theme }) => theme.breakpoints?.mobile}) {
-    width: 80%;
-
-  }
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints?.extraSmallMobile}) {
-    width: 80%;
+    width: 100%;
   }
 `;
 
@@ -211,27 +214,56 @@ export const HorizontalLine = styled.span`
 
 export const ServiceList = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 24px;
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     grid-template-columns: 1fr;
-   
   }
 `;
 export const Service = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  justify-content:space-evenly;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: auto;
+  height: 300px;
   border: 1px solid black;
   padding: 1.5rem;
   color: black;
-  border-radius: 25px;
-  padding-top: 3rem;
+  border-radius: 16px;
+  padding-top: 2rem;
   padding-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  
+  &:hover {
+    height: 500px;
+    width: 110%;
+    margin-left: -5%;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    
+    .service-details {
+      opacity: 1;
+      transform: translateY(0);
+      max-height: 250px;
+    }
+    
+    .service-number {
+      opacity: 0.2;
+    }
+  }
 `;
 export const ServiceIndex = styled.h1`
   font-size: ${({ theme }) => theme.fontSizes?.xxs};
@@ -312,4 +344,15 @@ export const ArrowIcon = styled(BsFillArrowUpRightCircleFill)`
   @media screen and (max-width: ${({ theme }) => theme.breakpoints?.smallestMobile}) {
     font-size: ${({ theme }) => theme.fontSizes?.xxs};
   }
+`;
+
+export const ServiceNumber = styled.div`
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.primaryBackground};
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
 `;

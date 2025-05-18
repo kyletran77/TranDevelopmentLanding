@@ -174,7 +174,7 @@ export const ClientsContainer = styled.div`
   max-width: 1600px;
   overflow: hidden;
   padding: 30px 0px;
-  background: ${theme.colors.primaryBackground}
+  background: #5928e5;
 `
 
 export const ClientLogoDiv = styled.div`
@@ -190,7 +190,7 @@ export const ClientLogoDiv = styled.div`
 `
 
 export const ClientLogo = styled.img`
-
+  filter: brightness(0) invert(1);
 `
 
 export const ImageContainer = styled.div`

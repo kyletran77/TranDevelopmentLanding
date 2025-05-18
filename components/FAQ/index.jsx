@@ -14,6 +14,18 @@ import {
   QuestionWrapper,
   Section,
 } from "./FAQ.styled";
+import styled from "styled-components";
+
+const HighlightTag = styled.span`
+  background-color: #00ffb0;
+  color: #272782;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-left: 10px;
+  vertical-align: middle;
+`;
 
 const FAQ = () => {
   const [clicked, setClicked] = useState(false);
@@ -39,6 +51,7 @@ const FAQ = () => {
                   <QuestionWrapper role="button" onClick={() => toggle(index)} tabIndex={0}>
                     <FaqQuestion tabIndex={0}>
                       {item.question}
+                      {item.id === 3 && <HighlightTag>FREE</HighlightTag>}
                       {clicked === index ? <MinusIcon aria-label="Collapse FAQ answer"
                 aria-expanded="true"/> : <PlusIcon  aria-label="Expand FAQ answer"
                 aria-expanded="false"/>}{" "}
