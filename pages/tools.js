@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -227,7 +228,7 @@ const Tools = () => {
         <ComingSoonMessage>
           <ComingSoonText>Tools Directory Coming Soon!</ComingSoonText>
           <ComingSoonDescription>
-            We're curating a comprehensive directory of the tools and technologies we use. Check back soon for our recommendations.
+            We&apos;re curating a comprehensive directory of the tools and technologies we use. Check back soon for our recommendations.
           </ComingSoonDescription>
         </ComingSoonMessage>
         
@@ -238,7 +239,17 @@ const Tools = () => {
               {tools.map(tool => (
                 <ToolCard key={tool.id}>
                   <ToolLogo>
-                    <img src={tool.logo} alt={`${tool.name} logo`} />
+                    <Image 
+                      src={tool.logo} 
+                      alt={`${tool.name} logo`} 
+                      width={200}
+                      height={80}
+                      style={{
+                        maxWidth: '100%',
+                        maxHeight: '80px',
+                        objectFit: 'contain'
+                      }}
+                    />
                   </ToolLogo>
                   <ToolContent>
                     <ToolName>{tool.name}</ToolName>

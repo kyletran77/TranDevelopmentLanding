@@ -5,6 +5,17 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  images: {
+    domains: [
+      'www.tensorflow.org', 
+      'pytorch.org', 
+      'upload.wikimedia.org', 
+      'spark.apache.org', 
+      'pandas.pydata.org', 
+      'nextjs.org', 
+      'www.docker.com'
+    ],
+  },
 }
 
 module.exports = nextConfig

@@ -165,7 +165,7 @@ const Blog = () => {
         <ComingSoonMessage>
           <ComingSoonText>Blog Coming Soon!</ComingSoonText>
           <ComingSoonDescription>
-            We're working on bringing you valuable insights and content. Check back soon for updates or subscribe to our newsletter to be notified when new content is published.
+            We&apos;re working on bringing you valuable insights and content. Check back soon for updates or subscribe to our newsletter to be notified when new content is published.
           </ComingSoonDescription>
         </ComingSoonMessage>
         
