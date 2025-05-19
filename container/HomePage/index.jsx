@@ -1,24 +1,27 @@
 import styled from 'styled-components';
-
-import AboutUs from "../../components/AboutUs"
-import ContactUs from "../../components/ContactUs"
-import FAQ from "../../components/FAQ"
-import Features from "../../components/Features"
-import HeroSection from "../../components/HeroSection"
-import OurWorks from "../../components/OurWorks"
-import Services from "../../components/Services"
-import Testimonial from "../../components/Testimonial"
-import Testimonials from "../../components/Testimonials"
-import TrustedClients from "../../components/TrustedClients"
-import Values from "../../components/Values"
-import Link from 'next/link';
+import React from "react";
+import HeroSection from "../../components/HeroSection";
+import AboutUs from "../../components/AboutUs";
+import Services from "../../components/Services";
+import OurWorks from "../../components/OurWorks";
+import Resources from "../../components/Resources";
+import TestimonialComponent from "../../components/Testimonials";
+import Newsletter from "../../components/ContactUs";
+import FAQ from "../../components/FAQ";
+import LoadingScreen from "../../components/LoadingScreen";
 import { BsEnvelope } from 'react-icons/bs';
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 
-
 const HomePage = () => {
-  const scrollRef = useRef(null) 
+  const [isLoading, setIsLoading] = React.useState(true);
+  const scrollRef = useRef(null);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+  }, []);
 
   const FloatingButton = styled(motion.div)`
     position: fixed;
@@ -42,26 +45,33 @@ const HomePage = () => {
   `;
 
   return (
-    <>
-      <HeroSection id="main-content"/>
-      <AboutUs ref={scrollRef} />
-      <Services />
-      <OurWorks />
-      <Features />
-      <Testimonial />
-      <FAQ />
-      <ContactUs />
-      <a target='_blank' href="mailto:kyle@trandevelopment.io" aria-label="Contact us via email">
-        <FloatingButton 
-          initial={{ opacity: 0 , y:25}}
-          whileInView={{ opacity: 1, y:0 }}
-        > 
-          <FloatingButtonIcon><BsEnvelope></BsEnvelope></FloatingButtonIcon>
-        </FloatingButton>
-      </a>
+    <div>
+      {isLoading ? (
+        <LoadingScreen />
+      ) : (
+        <>
+          <div>
+            <HeroSection />
+            <AboutUs ref={scrollRef} />
+            <Services />
+            <OurWorks />
+            <Resources />
+            <TestimonialComponent />
+            <Newsletter />
+            <FAQ />
+          </div>
+          <a target='_blank' href="mailto:kyle@trandevelopment.io" aria-label="Contact us via email">
+            <FloatingButton 
+              initial={{ opacity: 0 , y:25}}
+              whileInView={{ opacity: 1, y:0 }}
+            > 
+              <FloatingButtonIcon><BsEnvelope></BsEnvelope></FloatingButtonIcon>
+            </FloatingButton>
+          </a>
+        </>
+      )}
+    </div>
+  );
+};
 
-    </>
-  )
-}
-
-export default HomePage
+export default HomePage;

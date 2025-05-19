@@ -4,6 +4,10 @@ import { theme } from "../components/Theme";
 import Layout from "../components/layout";
 import GlobalStyle from "../components/globalStyles";
 import LoadingScreen from "../components/LoadingScreen";
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 // import Router from 'next/router';
 // import NProgress from 'nprogress'; //nprogress module
 // import 'nprogress/nprogress.css'; //styles of nprogress
@@ -13,8 +17,8 @@ function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // setLoading(true);
-    setTimeout(() => setLoading(true), 1500);
+    // Add a shorter timeout for better user experience
+    setTimeout(() => setLoading(true), 800);
   }, []);
 
 
