@@ -65,7 +65,7 @@ export const SidebarMenuLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-margin:0.5rem;
+  margin: 0.5rem;
   text-decoration: none;
   list-style: none;
   transition: 0.2s ease-in-out;
@@ -75,20 +75,45 @@ margin:0.5rem;
   &:hover {
     color: #000000;
     transition: 0.2s ease-in-out;
-  }`;
+  }
+  
+  &[href="/verilog"] {
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 3px;
+      background: linear-gradient(90deg, #4a6cf7 0%, #6a89ff 100%);
+      border-radius: 2px;
+    }
+  }
+`;
 export const SidebarMenuLinkA = styled(motion.a)`
  color:#0D0A19;;
  opacity:0.95;
  font-size: 1.8rem;
  text-decoration: underline;
-  font-weight:600;
-  letter-spacing:0.8;
-  line-height:180%;
-  transition: all 2s ease-in-out;
+ font-weight:600;
+ letter-spacing:0.8;
+ line-height:180%;
+ transition: all 2s ease-in-out;
 
   &:hover {
     opacity:1;
     transition:all  2s ease-in-out;
     font-style: italic;
   }
+  
+  ${({ href }) => href === '/verilog' && `
+    background: linear-gradient(90deg, #343a40 0%, #4a6cf7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  `}
 `;

@@ -56,7 +56,7 @@ const ChildNavbar = ({ toggle}) => {
             return (
               <NavItem key={link.id}>
                 <NavLink href={Href}> 
-                  <NavLinkA role="button"> {link.name}</NavLinkA>
+                  <NavLinkA href={Href} role="button"> {link.name}</NavLinkA>
                 </NavLink>
               </NavItem>
             );

@@ -25,8 +25,8 @@ const Sidebar = ({ isOpen,toggle}) => {
           return (
             <SidebarMenu key={link.id} onClick={toggle}>
               <li>
-                <SidebarMenuLink  href={Href} >
-                  <SidebarMenuLinkA role="button"> {link.name}</SidebarMenuLinkA>
+                <SidebarMenuLink href={Href} >
+                  <SidebarMenuLinkA href={Href} role="button"> {link.name}</SidebarMenuLinkA>
                 </SidebarMenuLink>
               </li>
             </SidebarMenu>

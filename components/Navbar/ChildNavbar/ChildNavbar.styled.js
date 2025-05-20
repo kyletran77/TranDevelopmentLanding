@@ -77,10 +77,40 @@ export const NavLink = styled(Link)`
   margin-bottom: 6px;
   padding: 0 1rem;
   cursor: pointer;
+  
+  &[href="/verilog"] {
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 3px;
+      background: linear-gradient(90deg, #4a6cf7 0%, #6a89ff 100%);
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    
+    &:hover::after {
+      width: 85%;
+    }
+  }
 `;
 export const NavLinkA = styled(motion.a)`
   color: #0D0A19;
   cursor: pointer;
+  
+  ${({ href }) => href === '/verilog' && `
+    font-weight: 600;
+    background: linear-gradient(90deg, #343a40 0%, #4a6cf7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  `}
 `;
 
 export const MobileMenu = styled(motion.div)`
