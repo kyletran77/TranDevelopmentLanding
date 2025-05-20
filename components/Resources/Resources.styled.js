@@ -12,6 +12,9 @@ export const ResourcesSection = styled.section`
   max-width: 100%;
   background-color: #ffffff;
   padding: 4rem 0;
+  overflow-x: hidden; /* Ensure no horizontal scrollbar appears */
+  margin-left: 0;
+  margin-right: 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding: 3rem 0;
@@ -19,11 +22,23 @@ export const ResourcesSection = styled.section`
 `;
 
 export const ResourcesContainer = styled.div`
-  width: 90%;
-  max-width: 1600px;
+  width: 95%;
+  max-width: 2200px; /* Increased for wider screens */
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  position: relative;
+  
+  /* Heading section gets contained */
+  & > div:first-child {
+    width: 90%;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: 95%;
+  }
 `;
 
 export const ResourcesHeading = styled.h2`
@@ -56,36 +71,87 @@ export const ResourcesDescription = styled.p`
 export const CarouselContainer = styled.div`
   width: 100%;
   margin-bottom: 3rem;
+  padding: 0;
+  position: relative;
   
-  .swiper {
-    padding-bottom: 3rem;
+  /* Place headings in a contained area */
+  h3 {
+    width: 90%;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
   }
-
-  .swiper-pagination {
-    bottom: 0;
+  
+  .carousel-root {
+    width: 100%;
+    max-width: 100vw;
+    overflow: visible;
   }
-
-  .swiper-pagination-bullet {
-    background: ${({ theme }) => theme.colors.teritory};
-    opacity: 0.5;
+  
+  .carousel {
+    width: 100%;
+    overflow: visible;
+  }
+  
+  .carousel-slide {
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  
+  .carousel .control-arrow {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.05);
+    height: 60px;
+    width: 40px;
+    top: calc(50% - 30px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
-    &-active {
-      opacity: 1;
+    &:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
+    
+    &.control-prev {
+      border-radius: 0 5px 5px 0;
+      left: -10px;
+    }
+    
+    &.control-next {
+      border-radius: 5px 0 0 5px;
+      right: -10px;
     }
   }
-
-  .swiper-button-prev,
-  .swiper-button-next {
-    color: ${({ theme }) => theme.colors.teritory};
+  
+  .carousel .control-dots {
+    margin: 15px 0 0;
     
-    &:after {
-      font-size: 1.5rem;
-    }
-    
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-      &:after {
-        font-size: 1.2rem;
+    .dot {
+      background: ${({ theme }) => theme.colors.teritory};
+      opacity: 0.5;
+      width: 10px;
+      height: 10px;
+      box-shadow: none;
+      
+      &.selected {
+        opacity: 1;
       }
+    }
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    .carousel .control-arrow {
+      height: 40px;
+      width: 30px;
+      top: calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    .carousel .control-arrow {
+      height: 30px;
+      width: 25px;
+      top: calc(50% - 15px);
     }
   }
 `;
@@ -112,6 +178,8 @@ export const EventCard = styled.div`
   min-height: 280px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 auto;
+  width: 85%; /* Make cards narrower to fit better */
   
   h3 {
     font-family: "Grifter-bold", sans-serif;
@@ -124,6 +192,16 @@ export const EventCard = styled.div`
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: 90%;
+    padding: 1.25rem;
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 95%;
+    padding: 1rem;
   }
 `;
 
@@ -176,10 +254,22 @@ export const AIToolCard = styled.div`
   min-height: 380px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 auto;
+  width: 85%; /* Make cards narrower to fit better */
   
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: 90%;
+    padding: 1.25rem;
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 95%;
+    padding: 1rem;
   }
 `;
 

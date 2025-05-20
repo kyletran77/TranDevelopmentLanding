@@ -1,9 +1,6 @@
-import React, { useRef } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination, A11y } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import React from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { motion } from 'framer-motion';
 import { 
   ResourcesSection, 
@@ -116,11 +113,6 @@ const aiTools = [
 ];
 
 const Resources = () => {
-  const eventsNavigationPrevRef = useRef(null);
-  const eventsNavigationNextRef = useRef(null);
-  const toolsNavigationPrevRef = useRef(null);
-  const toolsNavigationNextRef = useRef(null);
-
   return (
     <ResourcesSection id="resources-section">
       <ResourcesContainer>
@@ -138,42 +130,89 @@ const Resources = () => {
 
         <CarouselContainer>
           <CarouselHeading>Upcoming Education Events</CarouselHeading>
-          <Swiper
-            modules={[Autoplay, Navigation, Pagination, A11y]}
-            spaceBetween={24}
-            slidesPerView={1}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-              reverseDirection: false
-            }}
-            pagination={{ clickable: true }}
-            navigation={{
-              prevEl: eventsNavigationPrevRef.current,
-              nextEl: eventsNavigationNextRef.current,
-            }}
-            onBeforeInit={(swiper) => {
-              swiper.params.navigation.prevEl = eventsNavigationPrevRef.current;
-              swiper.params.navigation.nextEl = eventsNavigationNextRef.current;
-            }}
-            breakpoints={{
+          <Carousel
+            showArrows={true}
+            showStatus={false}
+            showThumbs={false}
+            infiniteLoop={true}
+            autoPlay={true}
+            interval={2000}
+            stopOnHover={true}
+            swipeable={true}
+            emulateTouch={true}
+            centerMode={true}
+            centerSlidePercentage={30}
+            selectedItem={0}
+            preventMovementUntilSwipeScrollTolerance={true}
+            swipeScrollTolerance={50}
+            renderArrowPrev={(clickHandler, hasPrev) => 
+              hasPrev && (
+                <button 
+                  type="button" 
+                  onClick={clickHandler} 
+                  className="control-arrow control-prev"
+                  aria-label="Previous slide"
+                  style={{ 
+                    position: 'absolute', 
+                    zIndex: 10, 
+                    left: '10px',
+                    fontSize: '24px',
+                    background: 'rgba(0,0,0,0.1)',
+                    width: '40px',
+                    height: '60px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    border: 'none',
+                    borderRadius: '0 5px 5px 0',
+                    cursor: 'pointer'
+                  }}
+                >
+                  ‹
+                </button>
+              )
+            }
+            renderArrowNext={(clickHandler, hasNext) => 
+              hasNext && (
+                <button 
+                  type="button" 
+                  onClick={clickHandler} 
+                  className="control-arrow control-next"
+                  aria-label="Next slide"
+                  style={{ 
+                    position: 'absolute', 
+                    zIndex: 10, 
+                    right: '10px',
+                    fontSize: '24px',
+                    background: 'rgba(0,0,0,0.1)',
+                    width: '40px',
+                    height: '60px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    border: 'none',
+                    borderRadius: '5px 0 0 5px',
+                    cursor: 'pointer'
+                  }}
+                >
+                  ›
+                </button>
+              )
+            }
+            responsive={{
+              0: {
+                centerSlidePercentage: 85
+              },
               640: {
-                slidesPerView: 2,
+                centerSlidePercentage: 45
               },
               1024: {
-                slidesPerView: 3,
-              },
-            }}
-            a11y={{
-              prevSlideMessage: 'Previous event',
-              nextSlideMessage: 'Next event',
-              firstSlideMessage: 'This is the first event',
-              lastSlideMessage: 'This is the last event',
+                centerSlidePercentage: 30
+              }
             }}
           >
             {educationEvents.map((event, index) => (
-              <SwiperSlide key={`event-${index}`}>
+              <div key={`event-${index}`} className="carousel-slide">
                 <EventCard>
                   <h3>{event.title}</h3>
                   <EventDate>{event.date}</EventDate>
@@ -183,51 +222,97 @@ const Resources = () => {
                     Learn More →
                   </EventLink>
                 </EventCard>
-              </SwiperSlide>
+              </div>
             ))}
-            <div className="swiper-button-prev" ref={eventsNavigationPrevRef} aria-label="Previous events"></div>
-            <div className="swiper-button-next" ref={eventsNavigationNextRef} aria-label="Next events"></div>
-          </Swiper>
+          </Carousel>
         </CarouselContainer>
 
         <CarouselContainer>
           <CarouselHeading>AI Tools We Leverage</CarouselHeading>
-          <Swiper
-            modules={[Autoplay, Navigation, Pagination, A11y]}
-            spaceBetween={24}
-            slidesPerView={1}
-            autoplay={{
-              delay: 3500,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-              reverseDirection: true
-            }}
-            pagination={{ clickable: true }}
-            navigation={{
-              prevEl: toolsNavigationPrevRef.current,
-              nextEl: toolsNavigationNextRef.current,
-            }}
-            onBeforeInit={(swiper) => {
-              swiper.params.navigation.prevEl = toolsNavigationPrevRef.current;
-              swiper.params.navigation.nextEl = toolsNavigationNextRef.current;
-            }}
-            breakpoints={{
+          <Carousel
+            showArrows={true}
+            showStatus={false}
+            showThumbs={false}
+            infiniteLoop={true}
+            autoPlay={true}
+            interval={2500}
+            stopOnHover={true}
+            swipeable={true}
+            emulateTouch={true}
+            centerMode={true}
+            centerSlidePercentage={30}
+            selectedItem={0}
+            preventMovementUntilSwipeScrollTolerance={true}
+            swipeScrollTolerance={50}
+            direction="prev"
+            renderArrowPrev={(clickHandler, hasPrev) => 
+              hasPrev && (
+                <button 
+                  type="button" 
+                  onClick={clickHandler} 
+                  className="control-arrow control-prev"
+                  aria-label="Previous slide"
+                  style={{ 
+                    position: 'absolute', 
+                    zIndex: 10, 
+                    left: '10px',
+                    fontSize: '24px',
+                    background: 'rgba(0,0,0,0.1)',
+                    width: '40px',
+                    height: '60px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    border: 'none',
+                    borderRadius: '0 5px 5px 0',
+                    cursor: 'pointer'
+                  }}
+                >
+                  ‹
+                </button>
+              )
+            }
+            renderArrowNext={(clickHandler, hasNext) => 
+              hasNext && (
+                <button 
+                  type="button" 
+                  onClick={clickHandler} 
+                  className="control-arrow control-next"
+                  aria-label="Next slide"
+                  style={{ 
+                    position: 'absolute', 
+                    zIndex: 10, 
+                    right: '10px',
+                    fontSize: '24px',
+                    background: 'rgba(0,0,0,0.1)',
+                    width: '40px',
+                    height: '60px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    border: 'none',
+                    borderRadius: '5px 0 0 5px',
+                    cursor: 'pointer'
+                  }}
+                >
+                  ›
+                </button>
+              )
+            }
+            responsive={{
+              0: {
+                centerSlidePercentage: 85
+              },
               640: {
-                slidesPerView: 2,
+                centerSlidePercentage: 45
               },
               1024: {
-                slidesPerView: 3,
-              },
-            }}
-            a11y={{
-              prevSlideMessage: 'Previous AI tool',
-              nextSlideMessage: 'Next AI tool',
-              firstSlideMessage: 'This is the first AI tool',
-              lastSlideMessage: 'This is the last AI tool',
+                centerSlidePercentage: 30
+              }
             }}
           >
             {aiTools.map((tool, index) => (
-              <SwiperSlide key={`tool-${index}`}>
+              <div key={`tool-${index}`} className="carousel-slide">
                 <AIToolCard>
                   <AIToolLogo src={tool.logo} alt={`${tool.name} logo`} />
                   <AIToolName>{tool.name}</AIToolName>
@@ -239,11 +324,9 @@ const Resources = () => {
                     Learn More →
                   </AIToolLink>
                 </AIToolCard>
-              </SwiperSlide>
+              </div>
             ))}
-            <div className="swiper-button-prev" ref={toolsNavigationPrevRef} aria-label="Previous AI tools"></div>
-            <div className="swiper-button-next" ref={toolsNavigationNextRef} aria-label="Next AI tools"></div>
-          </Swiper>
+          </Carousel>
         </CarouselContainer>
       </ResourcesContainer>
     </ResourcesSection>
