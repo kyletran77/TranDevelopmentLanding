@@ -841,7 +841,7 @@ endmodule`,
           active={showConnections}
           onClick={() => setShowConnections(!showConnections)}
         >
-          {showConnections ? 'Hide' : 'Show'} Connections
+          {showConnections ? "Hide" : "Show"} Connections
         </ControlButton>
       </PlaybackControls>
     </AgentContainer>
@@ -859,10 +859,10 @@ const VerilogPage = () => {
     <PageContainer>
       <Head>
         <title>Verilog & Multi-Agent Hardware Design | Tran Development</title>
-        <meta name="description" content="Explore how we're using NVIDIA's multi-agent approach to enhance Verilog, SystemVerilog, and HDL development for enterprise IP." />
+        <meta name="description" content="Explore how we&apos;re using NVIDIA&apos;s multi-agent approach to enhance Verilog, SystemVerilog, and HDL development for enterprise IP." />
         <meta property="og:url" content="https://trandev.netlify.app/verilog" />
         <meta property="og:title" content="Verilog & Multi-Agent Hardware Design | Tran Development" />
-        <meta property="og:description" content="Explore how we're using NVIDIA's multi-agent approach to enhance Verilog, SystemVerilog, and HDL development for enterprise IP." />
+        <meta property="og:description" content="Explore how we&apos;re using NVIDIA&apos;s multi-agent approach to enhance Verilog, SystemVerilog, and HDL development for enterprise IP." />
       </Head>
 
       <MainContent
@@ -897,10 +897,10 @@ const VerilogPage = () => {
             <SectionTitle>Revolutionizing HDL Development</SectionTitle>
             <SectionContent>
               <p>
-                At Tran Development, we're not just applying NVIDIA's Marco multi-agent framework—we're building on top of it to create next-generation HDL solutions for enterprise clients. While NVIDIA developed the core technology, we're extending it with our own innovations to revolutionize hardware description language (HDL) development, helping up-level Verilog, SystemVerilog, and HDL codebases beyond what's currently possible.
+                At Tran Development, we&apos;re not just applying NVIDIA&apos;s Marco multi-agent framework—we&apos;re building on top of it to create next-generation HDL solutions for enterprise clients. While NVIDIA developed the core technology, we&apos;re extending it with our own innovations to revolutionize hardware description language (HDL) development, helping up-level Verilog, SystemVerilog, and HDL codebases beyond what&apos;s currently possible.
               </p>
               <p>
-                Our enhanced implementation of the Marco framework combines NVIDIA's graph-based task solving architecture with our proprietary evaluation methods and model optimization techniques. This hybrid approach allows us to benchmark different LLM configurations and identify the optimal balance of performance, accuracy, and computational efficiency for each specific hardware design challenge.
+                Our enhanced implementation of the Marco framework combines NVIDIA&apos;s graph-based task solving architecture with our proprietary evaluation methods and model optimization techniques. This hybrid approach allows us to benchmark different LLM configurations and identify the optimal balance of performance, accuracy, and computational efficiency for each specific hardware design challenge.
               </p>
             </SectionContent>
           </Section>
@@ -909,13 +909,13 @@ const VerilogPage = () => {
             <SectionTitle>Our Multi-Agent Innovation Approach</SectionTitle>
             <SectionContent>
               <p>
-                We've taken NVIDIA's research foundation and developed a comprehensive evaluation system that compares different LLM strategies for hardware design tasks:
+                We&apos;ve taken NVIDIA&apos;s research foundation and developed a comprehensive evaluation system that compares different LLM strategies for hardware design tasks:
               </p>
               <FeaturesGrid>
                 <FeatureCard variants={itemVariants}>
                   <FeatureTitle>Commercial vs. Open-Weight Model Analysis</FeatureTitle>
                   <FeatureDescription>
-                    We systematically compare commercial LLMs used "out of the box" (like GPT-4 and Claude) against fine-tuned open-weight models (like Llama and Mistral). Our benchmarks consistently show that properly fine-tuned open models achieve 85-90% of commercial model performance at a fraction of the cost for HDL tasks.
+                    We systematically compare commercial LLMs used &quot;out of the box&quot; (like GPT-4 and Claude) against fine-tuned open-weight models (like Llama and Mistral). Our benchmarks consistently show that properly fine-tuned open models achieve 85-90% of commercial model performance at a fraction of the cost for HDL tasks.
                   </FeatureDescription>
                 </FeatureCard>
                 
@@ -929,7 +929,7 @@ const VerilogPage = () => {
                 <FeatureCard variants={itemVariants}>
                   <FeatureTitle>Hybrid Agent Architecture</FeatureTitle>
                   <FeatureDescription>
-                    We've extended NVIDIA's TCRG planning with our own hybrid architecture that combines specialized agents for different subtasks. For example, we might use GPT-4 for initial planning but deploy local fine-tuned models for code generation and debugging to optimize for both quality and cost.
+                    We&apos;ve extended NVIDIA&apos;s TCRG planning with our own hybrid architecture that combines specialized agents for different subtasks. For example, we might use GPT-4 for initial planning but deploy local fine-tuned models for code generation and debugging to optimize for both quality and cost.
                   </FeatureDescription>
                 </FeatureCard>
                 
@@ -943,14 +943,14 @@ const VerilogPage = () => {
                 <FeatureCard variants={itemVariants}>
                   <FeatureTitle>Custom AST Tools</FeatureTitle>
                   <FeatureDescription>
-                    Building on NVIDIA's AST-based waveform tracing concept, we've developed extended tools that integrate directly with popular EDA environments, creating a seamless workflow between AI-generated HDL code and industry-standard verification tools.
+                    Building on NVIDIA&apos;s AST-based waveform tracing concept, we&apos;ve developed extended tools that integrate directly with popular EDA environments, creating a seamless workflow between AI-generated HDL code and industry-standard verification tools.
                   </FeatureDescription>
                 </FeatureCard>
                 
                 <FeatureCard variants={itemVariants}>
                   <FeatureTitle>Multi-Modal Enhancement</FeatureTitle>
                   <FeatureDescription>
-                    We're pioneering the integration of visual inputs (circuit diagrams and waveforms) with textual specifications to improve code generation accuracy. Our experiments show a 27% improvement in functional correctness when using multi-modal inputs compared to text-only prompts.
+                    We&apos;re pioneering the integration of visual inputs (circuit diagrams and waveforms) with textual specifications to improve code generation accuracy. Our experiments show a 27% improvement in functional correctness when using multi-modal inputs compared to text-only prompts.
                   </FeatureDescription>
                 </FeatureCard>
               </FeaturesGrid>
@@ -1000,7 +1000,7 @@ const VerilogPage = () => {
             <SectionTitle>The Future of HDL Development</SectionTitle>
             <SectionContent>
               <p>
-                While NVIDIA has laid an impressive foundation with their Marco framework, our research indicates that practical enterprise deployment requires significant customization and enhancement. By building on this foundation and adding our own innovations, we're creating industrial-grade agentic systems that are ready for production hardware design workflows.
+                While NVIDIA has laid an impressive foundation with their Marco framework, our research indicates that practical enterprise deployment requires significant customization and enhancement. By building on this foundation and adding our own innovations, we&apos;re creating industrial-grade agentic systems that are ready for production hardware design workflows.
               </p>
               <p>
                 Our ongoing research and development focuses on:
@@ -1013,7 +1013,7 @@ const VerilogPage = () => {
                 <li>Creating enterprise-ready deployment strategies that balance cloud and local computation for optimal security and performance</li>
               </ul>
               <p>
-                By partnering with Tran Development, you benefit from both NVIDIA's cutting-edge research and our practical extensions that make these technologies production-ready for enterprise hardware development.
+                By partnering with Tran Development, you benefit from both NVIDIA&apos;s cutting-edge research and our practical extensions that make these technologies production-ready for enterprise hardware development.
               </p>
             </SectionContent>
           </Section>

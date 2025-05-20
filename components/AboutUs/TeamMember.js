@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const Card = styled(motion.div)`
   background-color: white;
@@ -25,12 +26,7 @@ const ProfileImage = styled.div`
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 1.5rem;
-  
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  position: relative;
 `;
 
 const MemberName = styled.h3`
@@ -174,7 +170,13 @@ const TeamMember = (props) => {
       // viewport={{ once: true }} // Handled by parent motion.div in about.js
     >
       <ProfileImage>
-        <img src={image} alt={`${name} portrait`} />
+        <Image 
+          src={image} 
+          alt={`${name} portrait`} 
+          fill
+          style={{ objectFit: 'cover' }}
+          sizes="120px"
+        />
       </ProfileImage>
       
       <MemberName>{name}</MemberName>
