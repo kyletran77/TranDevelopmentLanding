@@ -1,9 +1,11 @@
 import Links from '../../../data/menuLinks';
 import Link from 'next/link';
 import {LogoText , CloseIcon, IconContainer, LogoContainer, SidebarContainer, SidebarMenu, SidebarMenuLink, SidebarMenuLinkA, SidebarMenuWrapper } from './Sidebar.styled'
-
+import { useRouter } from 'next/router';
 
 const Sidebar = ({ isOpen,toggle}) => {
+  const router = useRouter();
+
   return (
     
     <SidebarContainer isOpen={isOpen} onClick={toggle} >
@@ -14,15 +16,22 @@ const Sidebar = ({ isOpen,toggle}) => {
             <CloseIcon/>
         </IconContainer>
         <SidebarMenuWrapper>
-        {Links.map((link) => (
-        <SidebarMenu key={link.id} onClick={toggle}>
-          <li>
-        <SidebarMenuLink  href={link.to} >
-         <SidebarMenuLinkA role="button"> {link.name}</SidebarMenuLinkA>
-        </SidebarMenuLink>
-        </li>
-        </SidebarMenu>
-      ))}
+        {Links.map((link) => {
+          let Href = link.to;
+          if (link.to.startsWith('#') && router.pathname !== '/') {
+            Href = `/${link.to}`;
+          }
+
+          return (
+            <SidebarMenu key={link.id} onClick={toggle}>
+              <li>
+                <SidebarMenuLink  href={Href} >
+                  <SidebarMenuLinkA role="button"> {link.name}</SidebarMenuLinkA>
+                </SidebarMenuLink>
+              </li>
+            </SidebarMenu>
+          );
+        })}
         </SidebarMenuWrapper>
     </SidebarContainer>
    

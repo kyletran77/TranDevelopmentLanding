@@ -33,6 +33,11 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en" style={{scrollBehavior:'smooth'}}>
         <Head>
+          {/* Favicon Links */}
+          <link rel="icon" href="/images/TranDevPRKit/color_tdev_logo.svg" type="image/svg+xml" />
+          <link rel="apple-touch-icon" href="/images/TranDevPRKit/color_tdev_logo.svg" />
+          <meta name="theme-color" content="#5928e5" />
+
           {/*======================== Google Fonts ========================*/}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link

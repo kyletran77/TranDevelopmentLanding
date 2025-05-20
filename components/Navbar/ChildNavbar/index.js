@@ -14,10 +14,12 @@ import {
   NavMenu,
 } from "./ChildNavbar.styled";
 import Link from "next/link";
+import { useRouter } from 'next/router';
 
 
 const ChildNavbar = ({ toggle}) => {
   const [scrollNav, setScrollNav] = useState(false);
+  const router = useRouter();
 
   const LogoValue = "logo";
 
@@ -32,6 +34,7 @@ const ChildNavbar = ({ toggle}) => {
 
   useEffect(() => {
     window.addEventListener("scroll", changeNav);
+    return () => window.removeEventListener("scroll", changeNav);
   }, []);
 
   return (
@@ -45,13 +48,19 @@ const ChildNavbar = ({ toggle}) => {
           <MenuIcon />
         </MobileMenu>
         <NavMenu>
-          {Links.map((link) => (
-            <NavItem key={link.id}>
-              <NavLink href={link.to}>
-                <NavLinkA role="button"> {link.name}</NavLinkA>
-              </NavLink>
-            </NavItem>
-          ))}
+          {Links.map((link) => {
+            let Href = link.to;
+            if (link.to.startsWith('#') && router.pathname !== '/') {
+              Href = `/${link.to}`;
+            }
+            return (
+              <NavItem key={link.id}>
+                <NavLink href={Href}> 
+                  <NavLinkA role="button"> {link.name}</NavLinkA>
+                </NavLink>
+              </NavItem>
+            );
+          })}
         </NavMenu>
       </NavContainer>
     </Nav>
