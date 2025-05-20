@@ -38,6 +38,17 @@ export default class MyDocument extends Document {
           <link rel="apple-touch-icon" href="/images/TranDevPRKit/color_tdev_logo.svg" />
           <meta name="theme-color" content="#5928e5" />
 
+          {/* Default Open Graph Tags */}
+          <meta property="og:type" content="website" />
+          <meta property="og:site_name" content="Tran Development" />
+          {/* IMPORTANT: Replace with your actual base URL and ensure logo is a .png or .jpg for best compatibility */}
+          <meta property="og:image" content="https://trandev.netlify.app/images/TranDevPRKit/color_tdev_logo.png" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          {/* Add a default title and description that can be overridden by individual pages */}
+          <meta property="og:title" content="Tran Development" />
+          <meta property="og:description" content="Innovative solutions for your business needs." />
+
           {/*======================== Google Fonts ========================*/}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link

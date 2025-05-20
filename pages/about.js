@@ -193,6 +193,11 @@ const AboutPage = () => {
       <Head>
         <title>Meet Our Team | Tran Development</title>
         <meta name="description" content="Meet the core team and advisors behind Tran Development. We're passionate about turning innovative ideas into scalable AI solutions." />
+        {/* Open Graph Tags for About Page */}
+        <meta property="og:url" content="https://trandev.netlify.app/about" />
+        <meta property="og:title" content="Meet Our Team | Tran Development" />
+        <meta property="og:description" content="Meet the core team and advisors behind Tran Development. We're passionate about turning innovative ideas into scalable AI solutions." />
+        {/* og:image will use the default from _document.js unless overridden here */}
       </Head>
 
       <AnimatedBlob className="blob1" />

@@ -132,6 +132,12 @@ const ResourcesPage = () => {
       <Head>
         <title>Resources | Tran Development</title>
         <meta name="description" content="Explore valuable resources, AI tools, educational events, and video tutorials from Tran Development." />
+        {/* Open Graph Tags for Resources Page */}
+        {/* IMPORTANT: Replace with your actual base URL */}
+        <meta property="og:url" content="https://trandev.netlify.app/resources" />
+        <meta property="og:title" content="Resources | Tran Development" />
+        <meta property="og:description" content="Explore valuable resources, AI tools, educational events, and video tutorials from Tran Development." />
+        {/* og:image will use the default from _document.js unless overridden here */}
       </Head>
 
       <MainContent
