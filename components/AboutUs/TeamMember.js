@@ -173,8 +173,8 @@ const TeamMember = (props) => {
         <Image 
           src={image} 
           alt={`${name} portrait`} 
-          fill
-          style={{ objectFit: 'cover' }}
+          layout='fill'
+          objectFit='cover'
           sizes="120px"
         />
       </ProfileImage>
