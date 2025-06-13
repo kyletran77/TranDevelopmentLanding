@@ -137,19 +137,6 @@ const AboutPage = () => {
       ctaText: 'Connect →',
       ctaLink: 'https://www.linkedin.com/in/davemapplegate/',
       animationDirection: 'left' // Custom prop for animation
-    },
-    {
-      name: 'Trinh Tran',
-      title: 'Tech Advisor',
-      image: '/images/TranDevPRKit/color_tdev_logo.svg',
-      bio: "Trinh is our cloud & AI advisor at Broadcom, specializing in large-scale distributed systems and AI infrastructure.",
-      linkedin: 'https://www.linkedin.com/in/trinh-tran-6592734/',
-      email: 'trinh@tran.dev',
-      skills: ['Cloud Architecture', 'AI Infrastructure', 'DevOps Automation'],
-      tools: ['AWS', 'Kubernetes', 'Terraform'],
-      ctaText: 'Learn More →',
-      ctaLink: 'https://www.linkedin.com/in/trinh-tran-6592734/',
-      animationDirection: 'right' // Custom prop for animation
     }
   ];
 
