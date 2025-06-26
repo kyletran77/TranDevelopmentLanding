@@ -211,8 +211,8 @@ const DemoSection = styled.section`
 `;
 
 const DemoContainer = styled.div`
-  width: 90%;
-  max-width: 1200px;
+  width: 95%;
+  max-width: 1600px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
@@ -348,7 +348,7 @@ const AgentTimeline = styled.div`
   flex-direction: row;
   align-items: stretch;
   width: 100%;
-  min-height: 500px;
+  min-height: 600px;
   overflow-x: auto;
   padding: 1rem 0;
   position: relative;
@@ -356,10 +356,11 @@ const AgentTimeline = styled.div`
 
 const AgentColumn = styled.div`
   flex: 1;
-  min-width: 220px;
+  min-width: 280px;
+  max-width: 350px;
   display: flex;
   flex-direction: column;
-  padding: 0 0.5rem;
+  padding: 0 0.75rem;
   position: relative;
   
   &:not(:last-child)::after {
@@ -430,8 +431,8 @@ const MessageTime = styled.div`
 `;
 
 const MessageContent = styled.div`
-  font-size: 0.85rem;
-  line-height: 1.4;
+  font-size: 0.9rem;
+  line-height: 1.5;
   white-space: pre-wrap;
   word-break: break-word;
 `;
@@ -441,8 +442,8 @@ const CodeSnippet = styled.pre`
   color: #abb2bf;
   padding: 0.75rem;
   border-radius: 4px;
-  font-size: 0.8rem;
-  line-height: 1.4;
+  font-size: 0.85rem;
+  line-height: 1.5;
   overflow-x: auto;
   margin-top: 0.5rem;
 `;
