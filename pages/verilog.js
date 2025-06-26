@@ -572,146 +572,153 @@ const InteractiveAgentVisualization = () => {
   const agents = [
     { 
       id: 'planner', 
-      name: 'Planner Agent', 
-      role: 'TCRG Planning',
-      color: '#4a6cf7',
-      messages: [
-        { 
-          time: '00:00', 
-          content: 'Starting task planning for sequence detector module. Analyzing requirements...',
-          startPercent: 0 
-        },
-        { 
-          time: '00:05', 
-          content: 'Task breakdown:\n1. Define module interface\n2. Create state machine\n3. Implement state transitions\n4. Design output logic',
-          startPercent: 10 
-        },
-        {
-          time: '00:12',
-          content: 'Building Task and Circuit Relation Graph for "10011" sequence detector...',
-          startPercent: 20
-        },
-        {
-          time: '00:18',
-          content: 'TCRG analysis complete. Signal transitions identified:\n- S0 → S1 on input "1"\n- S1 → S2 on input "0"\n- S2 → S3 on input "0"\n- S3 → S4 on input "1"\n- S4 → S5 on input "1"',
-          startPercent: 30,
-          interactionWith: 'coder',
-          interactionTarget: 0
-        }
-      ] 
-    },
-    { 
-      id: 'coder', 
-      name: 'Code Agent', 
-      role: 'Verilog Generation',
-      color: '#00a67e',
-      messages: [
-        { 
-          time: '00:20', 
-          content: 'Received task breakdown and TCRG data. Generating Verilog module...',
-          startPercent: 35 
-        },
-        { 
-          time: '00:25', 
-          content: 'Defining module interface and state parameters based on TCRG:',
-          code: `module sequence_detector (
-  input wire clk,
-  input wire reset,
-  input wire data_in,
-  output reg detected
-);
-
-  // State encoding
-  parameter S0 = 3'b000;  // Initial state
-  parameter S1 = 3'b001;  // Detected '1'
-  parameter S2 = 3'b010;  // Detected '10'
-  parameter S3 = 3'b011;  // Detected '100'
-  parameter S4 = 3'b100;  // Detected '1001'
-  parameter S5 = 3'b101;  // Detected '10011'
-
-  reg [2:0] current_state, next_state;`,
-          startPercent: 45
-        },
-        {
-          time: '00:32',
-          content: 'Implementing state transitions based on signal flow:',
-          code: `  // State register
-  always @(posedge clk or posedge reset) begin
-    if (reset)
-      current_state <= S0;
-    else
-      current_state <= next_state;
-  end
-
-  // Next state logic
-  always @(*) begin
-    case (current_state)
-      S0: next_state = data_in ? S1 : S0;
-      S1: next_state = data_in ? S1 : S2;
-      S2: next_state = data_in ? S1 : S3;
-      S3: next_state = data_in ? S4 : S0;
-      S4: next_state = data_in ? S5 : S2;
-      S5: next_state = data_in ? S1 : S2;
-      default: next_state = S0;
-    endcase
-  end`,
-          startPercent: 55
-        },
-        {
-          time: '00:38',
-          content: 'Adding output logic and completing the module:',
-          code: `  // Output logic
-  always @(*) begin
-    detected = (current_state == S5);
-  end
-
-endmodule`,
-          startPercent: 65,
-          interactionWith: 'debugger',
-          interactionTarget: 0
-        }
-      ] 
-    },
-    { 
-      id: 'debugger', 
-      name: 'Debug Agent', 
-      role: 'AST-Based Verification',
-      color: '#e94c2b',
-      messages: [
-        { 
-          time: '00:42', 
-          content: 'Received generated Verilog code. Running syntax check...',
-          startPercent: 70 
-        },
-        { 
-          time: '00:45', 
-          content: 'Syntax check passed. Running AST-based waveform tracing to verify functional correctness...',
-          startPercent: 75 
-        },
-        {
-          time: '00:52',
-          content: 'AST analysis complete. Tracing signal "detected" for input sequence "10011":\n\n- Starting at S0\n- Input "1" → S1, detected = 0\n- Input "0" → S2, detected = 0\n- Input "0" → S3, detected = 0\n- Input "1" → S4, detected = 0\n- Input "1" → S5, detected = 1\n\nSequence detector works correctly!',
-          startPercent: 85,
-          interactionWith: 'timing',
-          interactionTarget: 0
-        }
-      ] 
-    },
-    { 
-      id: 'timing', 
-      name: 'Timing Agent', 
-      role: 'Timing Analysis',
+      name: 'Planner', 
+      role: 'TCRG Task Planning',
       color: '#9c27b0',
       messages: [
         { 
-          time: '00:58', 
-          content: 'Performing timing analysis on verified Verilog code...',
-          startPercent: 90 
+          time: '19:48:37', 
+          content: 'Starting VerilogCoder run for timer FSM problem...\n\n📋 Analyzing Problem: Timer that detects "1101" pattern, shifts 4 bits, waits for counters, handles acknowledgment.',
+          startPercent: 0 
         },
         { 
-          time: '01:05', 
-          content: 'Timing analysis complete. All paths meet timing constraints.\n\nCritical path: S3 → S4 transition\nWorst-case timing: 2.3ns\nSlack: 1.7ns\n\nDesign is timing-clean and ready for synthesis.',
-          startPercent: 95 
+          time: '19:49:15', 
+          content: '🔍 Breaking down into subtasks:\n\n1️⃣ Define module with inputs/outputs\n2️⃣ Determine FSM states needed  \n3️⃣ Implement state transition logic\n4️⃣ Design output control signals\n\nBuilding Task-Circuit Relation Graph...',
+          startPercent: 15 
+        },
+        {
+          time: '19:49:31',
+          content: '✅ Task plan complete!\n\n🎯 Identified 8 FSM states:\n• STATE_IDLE → STATE_DETECT_1 → STATE_DETECT_11 → STATE_DETECT_110\n• STATE_DETECT_1101 → STATE_SHIFT → STATE_COUNT → STATE_DONE\n\n📊 TCRG shows signal relationships for shift_ena, counting, done outputs.',
+          startPercent: 25,
+          interactionWith: 'plan_verify',
+          interactionTarget: 0
+        }
+      ] 
+    },
+    { 
+      id: 'plan_verify', 
+      name: 'Plan Verify Assistant', 
+      role: 'Plan Validation & Consistency',
+      color: '#00a67e',
+      messages: [
+        { 
+          time: '19:49:32', 
+          content: '🔍 Received task plan. Verifying consistency with problem requirements...',
+          startPercent: 30 
+        },
+        { 
+          time: '19:49:35', 
+          content: '✅ Plan validation complete!\n\n✓ Module interface matches requirements\n✓ FSM states cover all scenarios\n✓ State transitions handle pattern detection\n✓ Output signals properly defined\n\nPlan adheres to all rules. Ready for implementation.',
+          startPercent: 35,
+          interactionWith: 'verilog_engineer',
+          interactionTarget: 0
+        }
+      ] 
+    },
+    { 
+      id: 'verilog_engineer', 
+      name: 'Verilog Engineer', 
+      role: 'SystemVerilog Code Generation',
+      color: '#343a40',
+      messages: [
+        { 
+          time: '19:49:40', 
+          content: '⚡ Starting SystemVerilog implementation based on verified plan...',
+          startPercent: 40 
+        },
+        { 
+          time: '19:49:45', 
+          content: '🔧 Defining TopModule interface:',
+          code: `module TopModule (
+    input  logic clk,
+    input  logic reset,
+    input  logic data,
+    input  logic done_counting,
+    input  logic ack,
+    output logic shift_ena,
+    output logic counting,
+    output logic done
+);`,
+          startPercent: 45
+        },
+        {
+          time: '19:49:50',
+          content: '🎛️ Implementing FSM with 8 states:',
+          code: `    // State definitions
+    localparam STATE_IDLE = 3'b000;        
+    localparam STATE_DETECT_1 = 3'b001;    
+    localparam STATE_DETECT_11 = 3'b010;   
+    localparam STATE_DETECT_110 = 3'b011;  
+    localparam STATE_DETECT_1101 = 3'b100; 
+    localparam STATE_SHIFT = 3'b101;       
+    localparam STATE_COUNT = 3'b110;       
+    localparam STATE_DONE = 3'b111;
+    
+    logic [2:0] state, state_next;
+    logic [2:0] shift_counter;`,
+          startPercent: 50
+        },
+        {
+          time: '19:49:55',
+          content: '🔄 Adding pattern detection and control logic:',
+          code: `    // Pattern detection state machine
+    always @(*) begin
+        case (state)
+            STATE_IDLE: state_next = data ? STATE_DETECT_1 : STATE_IDLE;
+            STATE_DETECT_1: state_next = data ? STATE_DETECT_11 : STATE_IDLE;
+            STATE_DETECT_11: state_next = data ? STATE_DETECT_11 : STATE_DETECT_110;
+            STATE_DETECT_110: state_next = data ? STATE_DETECT_1101 : STATE_IDLE;
+            STATE_DETECT_1101: state_next = STATE_SHIFT;
+            STATE_SHIFT: state_next = (shift_counter == 3) ? STATE_COUNT : STATE_SHIFT;
+            STATE_COUNT: state_next = done_counting ? STATE_DONE : STATE_COUNT;
+            STATE_DONE: state_next = ack ? STATE_IDLE : STATE_DONE;
+        endcase
+    end
+    
+    assign shift_ena = (state == STATE_SHIFT);
+    assign counting = (state == STATE_COUNT);
+    assign done = (state == STATE_DONE);`,
+          startPercent: 60,
+          interactionWith: 'verilog_verify',
+          interactionTarget: 0
+        }
+      ] 
+    },
+    { 
+      id: 'verilog_verify', 
+      name: 'Verilog Verify Assistant', 
+      role: 'Verification & Debugging',
+      color: '#e94c2b',
+      messages: [
+        { 
+          time: '19:50:02', 
+          content: '🔍 Received generated code. Running syntax check with iverilog...',
+          startPercent: 65 
+        },
+        { 
+          time: '19:50:05', 
+          content: '✅ Syntax check PASSED!\n\n🧪 Running functional simulation...\nCompiling: iverilog -Wall -g2012 -s tb',
+          startPercent: 70 
+        },
+        {
+          time: '19:50:08',
+          content: '⚠️ MISMATCH DETECTED!\n\n📊 Waveform Analysis:\n• Expected: shift_ena HIGH at 85ns\n• Actual: shift_ena LOW at 85ns\n\n🔧 Issue: State transition timing problem in DETECT_1101 → SHIFT',
+          startPercent: 75
+        },
+        {
+          time: '19:50:12',
+          content: '🛠️ Applying fix:\n\n```verilog\n// Fixed output logic for timing\nshift_ena = (state == STATE_SHIFT) || \n           (state_next == STATE_SHIFT);\n```\n\n🔄 Re-running simulation...',
+          startPercent: 80
+        },
+        {
+          time: '19:50:18',
+          content: '🎯 Debugging with AST-based waveform tracing...\n\n📈 Found: shift_counter synchronization issues\n⚡ Status: 224 mismatched samples detected\n🔍 Tracing control signals for timing analysis...',
+          startPercent: 85
+        },
+        {
+          time: '19:50:25',
+          content: '🎉 VERIFICATION COMPLETE!\n\n✅ All 5069 test samples PASS\n✅ Pattern "1101" detection works correctly\n✅ Timer sequence control verified\n✅ State machine timing fixed\n\n🚀 Ready for synthesis!',
+          startPercent: 95
         }
       ] 
     }
